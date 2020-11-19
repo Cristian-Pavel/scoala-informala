@@ -4,6 +4,8 @@
 .modalContainer {
   max-width: 1200px;
   height: 100vh;
+  margin-left: auto;
+  margin-right: auto;
   background-color: #f9fafb;
   display: flex;
   justify-content: center;
