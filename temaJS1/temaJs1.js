@@ -49,3 +49,42 @@ function suma(nr) {
   }
   return sum;
 }
+
+// 6. O functie "prim" care primeste 1 parametru si returneaza true/false daca N este numar prim sau nu (restul impartirii la 1 si la N ==0)
+
+function prim(nr) {
+  let prim = true;
+  if (nr < 2) {
+    prim = false;
+  } else if (nr == 2) {
+    prim = true;
+  }
+  for (let i = 2; i <= nr / 2; i++) {
+    console.log(nr % i);
+    if (nr % i == 0) {
+      prim = false;
+      break;
+    } else prim = true;
+  }
+  return prim;
+}
+
+// 7. O functie "sumaPrime" care primeste 1 parametru si returneaza suma primelor N numere prime (pentru N=5 trebuie sa returneze 2+3+5+7+11=28)
+
+function sumaPrime(numar) {
+  let suma = 0;
+  let j = 1;
+  if (numar == 2) {
+    return numar;
+  } else if (numar > 2) {
+    let i = 2;
+    while (j <= numar) {
+      if (prim(i)) {
+        suma += i;
+        j++;
+      }
+      i++;
+    }
+    return suma;
+  }
+}
