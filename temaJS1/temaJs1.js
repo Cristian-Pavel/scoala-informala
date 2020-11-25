@@ -88,3 +88,15 @@ function sumaPrime(numar) {
     return suma;
   }
 }
+
+// 8. O functie "invers" care primeste un parametru de tip numar si intoarce inversul acestuia (ca numar) (123 => 321)
+
+function invers(numar) {
+  let inv = 0;
+  let nr = numar;
+  while (nr != 0) {
+    inv = inv * 10 + (nr % 10);
+    nr = Math.trunc(nr / 10);
+  }
+  return inv;
+}
