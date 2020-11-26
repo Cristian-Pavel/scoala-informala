@@ -116,3 +116,16 @@ function produsImpare(numar) {
   }
   return produs;
 }
+
+// 10. O functie "contains" care primeste 2 parametri(arr - array de nr intregi si x - numar) si verifica daca x exista in array (rezultatul este true/false)
+
+function contains(arr, x) {
+  let contine = false;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] == x) {
+      contine = true;
+      break;
+    }
+  }
+  return contine;
+}
