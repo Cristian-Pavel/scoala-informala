@@ -183,3 +183,18 @@ function produsPozitive(arr) {
   }
   return produs;
 }
+
+// 15. O functie "palindrom" care primeste un string si returneaza daca este palindrom (inversul == originalul, ex: "1234321", "55", "787") (true/false)
+
+function palindrom(str) {
+  let palind = true;
+  let j = str.length - 1;
+  for (let i = 0; i < str.length / 2 + 1; i++) {
+    if (str[i] != str[j]) {
+      palind = false;
+      break;
+    }
+    j--;
+  }
+  return palind;
+}
