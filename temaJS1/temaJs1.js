@@ -171,3 +171,15 @@ function hasDuplicates(arr) {
   }
   return dublicate;
 }
+
+// 14. O functie "produsPozitive" care primeste un array si returneaza produsul numerelor pozitive intr-un array primit ca parametru
+
+function produsPozitive(arr) {
+  let produs = 1;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > 0) {
+      produs *= arr[i];
+    }
+  }
+  return produs;
+}
