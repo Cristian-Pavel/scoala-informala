@@ -189,7 +189,7 @@ function produsPozitive(arr) {
 function palindrom(str) {
   let palind = true;
   let j = str.length - 1;
-  for (let i = 0; i < str.length / 2 + 1; i++) {
+  for (let i = 0; i < str.length / 2; i++) {
     if (str[i] != str[j]) {
       palind = false;
       break;
