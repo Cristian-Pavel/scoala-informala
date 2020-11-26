@@ -154,3 +154,20 @@ function sumMinMax(arr) {
   }
   return min + max;
 }
+
+// 13. O functie "hasDuplicates" care primeste un array si returneaza daca exista duplicate intr-un array primit ca parametru (true/false)
+
+function hasDuplicates(arr) {
+  let dublicate = false;
+  let j = 0;
+  while (j < arr.length - 1) {
+    for (let i = j + 1; i < arr.length; i++) {
+      if (arr[j] == arr[i]) {
+        dublicate = true;
+        break;
+      }
+    }
+    j++;
+  }
+  return dublicate;
+}
