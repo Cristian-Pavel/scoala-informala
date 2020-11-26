@@ -60,7 +60,6 @@ function prim(nr) {
     prim = true;
   }
   for (let i = 2; i <= nr / 2; i++) {
-    console.log(nr % i);
     if (nr % i == 0) {
       prim = false;
       break;
@@ -99,4 +98,21 @@ function invers(numar) {
     nr = Math.trunc(nr / 10);
   }
   return inv;
+}
+
+// 9. O functie "produsImpare" care primeste 1 parametru si returneaza produsul primelor N numere impare pozitive (pentru N=5; returneaza 1*3*5*7*9=945)
+
+function produsImpare(numar) {
+  let produs = 1;
+  let j = 1;
+  let i = 1;
+  while (j <= numar) {
+    while (i % 2 == 0) {
+      i++;
+    }
+    produs *= i;
+    i++;
+    j++;
+  }
+  return produs;
 }
