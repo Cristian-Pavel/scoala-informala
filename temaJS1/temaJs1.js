@@ -141,3 +141,16 @@ function maxArray(arr) {
   }
   return max;
 }
+
+// 12. O functie "sumMinMax" care primeste un array de numere si returneaza suma dintre valoare maxima si valoare minima
+
+function sumMinMax(arr) {
+  let max = maxArray(arr);
+  let min = arr[0];
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] < min) {
+      min = arr[i];
+    }
+  }
+  return min + max;
+}
