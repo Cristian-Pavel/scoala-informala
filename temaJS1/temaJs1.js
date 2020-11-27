@@ -13,7 +13,7 @@ function equals(a, b) {
 function compare(a, b) {
   if (a < b) {
     return -1;
-  } else if (a == b) {
+  } else if (a === b) {
     return 0;
   } else {
     return 1;
@@ -50,17 +50,17 @@ function suma(nr) {
   return sum;
 }
 
-// 6. O functie "prim" care primeste 1 parametru si returneaza true/false daca N este numar prim sau nu (restul impartirii la 1 si la N ==0)
+// 6. O functie "prim" care primeste 1 parametru si returneaza true/false daca N este numar prim sau nu (restul impartirii la 1 si la N ===0)
 
 function prim(nr) {
   let prim = true;
   if (nr < 2) {
     prim = false;
-  } else if (nr == 2) {
+  } else if (nr === 2) {
     prim = true;
   }
   for (let i = 2; i <= nr / 2; i++) {
-    if (nr % i == 0) {
+    if (nr % i === 0) {
       prim = false;
       break;
     } else prim = true;
@@ -73,7 +73,7 @@ function prim(nr) {
 function sumaPrime(numar) {
   let suma = 0;
   let j = 1;
-  if (numar == 2) {
+  if (numar === 2) {
     return numar;
   } else if (numar > 2) {
     let i = 2;
@@ -93,9 +93,11 @@ function sumaPrime(numar) {
 function invers(numar) {
   let inv = 0;
   let nr = numar;
+  let rest = 0;
   while (nr != 0) {
-    inv = inv * 10 + (nr % 10);
-    nr = Math.trunc(nr / 10);
+    rest = nr % 10;
+    inv = inv * 10 + rest;
+    nr = (nr - rest) / 10;
   }
   return inv;
 }
@@ -107,7 +109,7 @@ function produsImpare(numar) {
   let j = 1;
   let i = 1;
   while (j <= numar) {
-    while (i % 2 == 0) {
+    while (i % 2 === 0) {
       i++;
     }
     produs *= i;
@@ -122,7 +124,7 @@ function produsImpare(numar) {
 function contains(arr, x) {
   let contine = false;
   for (let i = 0; i < arr.length; i++) {
-    if (arr[i] == x) {
+    if (arr[i] === x) {
       contine = true;
       break;
     }
@@ -162,7 +164,7 @@ function hasDuplicates(arr) {
   let j = 0;
   while (j < arr.length - 1) {
     for (let i = j + 1; i < arr.length; i++) {
-      if (arr[j] == arr[i]) {
+      if (arr[j] === arr[i]) {
         dublicate = true;
         break;
       }
@@ -184,7 +186,7 @@ function produsPozitive(arr) {
   return produs;
 }
 
-// 15. O functie "palindrom" care primeste un string si returneaza daca este palindrom (inversul == originalul, ex: "1234321", "55", "787") (true/false)
+// 15. O functie "palindrom" care primeste un string si returneaza daca este palindrom (inversul === originalul, ex: "1234321", "55", "787") (true/false)
 
 function palindrom(str) {
   let palind = true;
