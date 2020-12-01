@@ -54,11 +54,6 @@ function suma(nr) {
 
 function prim(nr) {
   let prim = true;
-  if (nr < 2) {
-    prim = false;
-  } else if (nr === 2) {
-    prim = true;
-  }
   for (let i = 2; i <= nr / 2; i++) {
     if (nr % i === 0) {
       prim = false;
@@ -73,19 +68,15 @@ function prim(nr) {
 function sumaPrime(numar) {
   let suma = 0;
   let j = 1;
-  if (numar === 2) {
-    return numar;
-  } else if (numar > 2) {
-    let i = 2;
-    while (j <= numar) {
-      if (prim(i)) {
-        suma += i;
-        j++;
-      }
-      i++;
+  let i = 2;
+  while (j <= numar) {
+    if (prim(i)) {
+      suma += i;
+      j++;
     }
-    return suma;
+    i++;
   }
+  return suma;
 }
 
 // 8. O functie "invers" care primeste un parametru de tip numar si intoarce inversul acestuia (ca numar) (123 => 321)
@@ -190,13 +181,11 @@ function produsPozitive(arr) {
 
 function palindrom(str) {
   let palind = true;
-  let j = str.length - 1;
   for (let i = 0; i < str.length / 2; i++) {
-    if (str[i] != str[j]) {
+    if (str[i] != str[str.length - 1 - i]) {
       palind = false;
       break;
     }
-    j--;
   }
   return palind;
 }
