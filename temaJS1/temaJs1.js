@@ -25,9 +25,7 @@ function compare(a, b) {
 function max(a, b) {
   if (a >= b) {
     return a;
-  } else if (a < b) {
-    return b;
-  }
+  } else return b;
 }
 
 // 4. O functie "min" care primeste 2 parametrii si returneaza minimul dintre cele 2
@@ -35,9 +33,7 @@ function max(a, b) {
 function min(a, b) {
   if (a <= b) {
     return a;
-  } else if (b < a) {
-    return b;
-  }
+  } else return b;
 }
 
 // 5. O functie "suma" care primeste 1 parametru, numar intreg si returneaza suma primelor N numere naturale pozitive (exemplu: daca N este 3, trebuie sa returneze 6)
