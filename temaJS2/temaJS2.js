@@ -114,6 +114,7 @@ function factorial(n) {
 }
 
 // 8. Calculeaza cel mai mare divizor comun al 2 numere ("cmmdc")
+// Conf algoritmului lui Euclid, scad pe numarul mic din cel mare pana ajung egale
 
 function cmmdc(a, b) {
   let nrA = a;
@@ -123,4 +124,14 @@ function cmmdc(a, b) {
     else nrB -= nrA;
   }
   return nrA;
+}
+
+// 9. Calculeaza cel mai mic multiplu comun al 2 numere ("cmmmc")
+// Avand in vedere ca produsul a 2 nr naturale nenule = cmmdc * cmmmc => cmmc = produs / cmmdc
+
+function cmmmc(a, b) {
+  let nrA = a;
+  let nrB = b;
+  let rezultat = (nrA * nrB) / cmmdc(a, b);
+  return rezultat;
 }
