@@ -112,3 +112,15 @@ function factorial(n) {
   }
   return f;
 }
+
+// 8. Calculeaza cel mai mare divizor comun al 2 numere ("cmmdc")
+
+function cmmdc(a, b) {
+  let nrA = a;
+  let nrB = b;
+  while (nrA !== nrB) {
+    if (nrA > nrB) nrA -= nrB;
+    else nrB -= nrA;
+  }
+  return nrA;
+}
