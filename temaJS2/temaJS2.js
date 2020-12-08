@@ -135,3 +135,22 @@ function cmmmc(a, b) {
   let rezultat = (nrA * nrB) / cmmdc(a, b);
   return rezultat;
 }
+
+// 10. Returneaza un array care sa contina toti divizorii unui numar (ex pentru 64: trebuie sa returneze [2,4,8,16,32]) ("divizori")
+
+function divizori(n) {
+  let nr = n;
+  let listaDiv = [];
+  for (let i = 2; i < n; i++) {
+    if (nr % i === 0) {
+      listaDiv.push(i);
+    }
+  }
+  return listaDiv;
+}
+
+/**
+  parcurg numarul de la 2 la n, iar daca este divizior, il pun in array
+
+
+ */
