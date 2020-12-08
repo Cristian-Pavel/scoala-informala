@@ -149,8 +149,17 @@ function divizori(n) {
   return listaDiv;
 }
 
-/**
-  parcurg numarul de la 2 la n, iar daca este divizior, il pun in array
+// 11. O functie care verifica daca un numar este palindrom (ex: 121, 1234321) ("palindrom")
 
-
- */
+function palindrom(n) {
+  let nr = n;
+  let palind = 0;
+  let rest = 0;
+  while (nr !== 0) {
+    rest = nr % 10;
+    palind = palind * 10 + rest;
+    nr = (nr - rest) / 10;
+  }
+  if (palind === n) return true;
+  else return false;
+}
