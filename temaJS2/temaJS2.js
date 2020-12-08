@@ -187,3 +187,39 @@ function sort(sir) {
   }
   return sirPare;
 }
+
+// 13. O functie care primeste ca parametru un array de numere. Aceasta sorteaza ascendent numerele pare si descendent numerele impare, in cadrul aceluiasi array primit ca parameru. ("sortAscDesc")
+
+function sortAscDesc(arr) {
+  let sirSortPare = sort(arr);
+  let sirSortImpare = sortDesc(arr);
+  let sirNr = sirSortPare;
+  let j = 0;
+  for (let i = sirSortPare.length; i < arr.length; i++) {
+    sirNr[i] = sirSortImpare[j];
+    j++;
+  }
+
+  return sirNr;
+}
+function sortDesc(sir) {
+  let sirImpare = [];
+  let j = 0;
+  for (let i = 0; i < sir.length; i++) {
+    if (sir[i] % 2 !== 0) {
+      sirImpare[j] = sir[i];
+      j++;
+    }
+  }
+  let temporar;
+  for (let i = 0; i < j; i++) {
+    for (let k = i + 1; k < j; k++) {
+      if (sirImpare[i] < sirImpare[k]) {
+        temporar = sirImpare[i];
+        sirImpare[i] = sirImpare[k];
+        sirImpare[k] = temporar;
+      }
+    }
+  }
+  return sirImpare;
+}
