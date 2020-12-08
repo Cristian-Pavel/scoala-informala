@@ -223,3 +223,39 @@ function sortDesc(sir) {
   }
   return sirImpare;
 }
+
+// 14. O functie care primeste 2 parametri(un array si un numar). Folosind binary search verificati daca numarul primit ca parametru se gaseste in array. ("binarySearch")
+
+function binarySearch(arr, nr) {
+  let arrOrdonat = ordonare(arr);
+  // let arrOrdonat = arr;
+  let mijloc;
+  let inceput = 0;
+  let sfarsit = arrOrdonat.length - 1;
+  while (inceput <= sfarsit) {
+    mijloc = Math.trunc((inceput + sfarsit) / 2); // am eliminat zecimalele
+
+    if (arrOrdonat[mijloc] === nr) {
+      return true;
+    } else if (arrOrdonat[mijloc] < nr) {
+      inceput = mijloc + 1;
+    } else {
+      sfarsit = mijloc - 1;
+    }
+  }
+  return false;
+}
+
+function ordonare(arr) {
+  let sir = arr;
+  let aux;
+  for (let i = 0; i < sir.length - 1; i++) {
+    for (let j = i + 1; j < sir.length; j++)
+      if (sir[i] > sir[j]) {
+        aux = sir[i];
+        sir[i] = sir[j];
+        sir[j] = aux;
+      }
+  }
+  return sir;
+}
