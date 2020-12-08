@@ -163,3 +163,27 @@ function palindrom(n) {
   if (palind === n) return true;
   else return false;
 }
+
+// 12. O functie care sorteaza numerele pare dintr-un sir de numere primit ca parametru. ("sort")
+
+function sort(sir) {
+  let sirPare = [];
+  let j = 0;
+  for (let i = 0; i < sir.length; i++) {
+    if (sir[i] % 2 === 0) {
+      sirPare[j] = sir[i];
+      j++;
+    }
+  }
+  let temporar;
+  for (let i = 0; i < j; i++) {
+    for (let k = i + 1; k < j; k++) {
+      if (sirPare[i] > sirPare[k]) {
+        temporar = sirPare[i];
+        sirPare[i] = sirPare[k];
+        sirPare[k] = temporar;
+      }
+    }
+  }
+  return sirPare;
+}
