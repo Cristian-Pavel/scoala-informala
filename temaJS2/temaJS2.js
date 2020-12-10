@@ -228,12 +228,11 @@ function sortDesc(sir) {
 
 function binarySearch(arr, nr) {
   let arrOrdonat = ordonare(arr);
-  // let arrOrdonat = arr;
   let mijloc;
   let inceput = 0;
   let sfarsit = arrOrdonat.length - 1;
   while (inceput <= sfarsit) {
-    mijloc = Math.trunc((inceput + sfarsit) / 2); // am eliminat zecimalele
+    mijloc = Math.trunc((inceput + sfarsit) / 2);
 
     if (arrOrdonat[mijloc] === nr) {
       return true;
@@ -247,6 +246,7 @@ function binarySearch(arr, nr) {
 }
 
 function ordonare(arr) {
+  // am facut si acesta functie de ordonare in cazul in care se schimba datele de input si apar array-uri care nu sunt ordonate crescator
   let sir = arr;
   let aux;
   for (let i = 0; i < sir.length - 1; i++) {
@@ -259,3 +259,57 @@ function ordonare(arr) {
   }
   return sir;
 }
+
+// 15. O functie care implementeaza binary search pentru a verifica daca un numar se regaseste intr-un array. Dupa ce se termina executia functiei trebuie sa returnati de cate ori s-a apelat functia recursiv ("countBinarySearch")
+
+let nrApelari = 1;
+
+function countBinarySearch(arr, nr) {
+  let mijloc = Math.floor(arr.length / 2);
+  if (arr.length === 1 && arr[mijloc] !== nr) {
+    return nrApelari; // nu se gaseste in sir
+  }
+  if (nr === arr[mijloc]) {
+    return nrApelari;
+  } else if (nr < arr[mijloc]) {
+    nrApelari++;
+    return countBinarySearch(arr.slice(0, mijloc), nr);
+  } else if (nr > arr[mijloc]) {
+    nrApelari++;
+    return countBinarySearch(arr.slice(mijloc+1), nr);
+  }
+}
+
+countBinarySearch([1, 2, 3, 4, 5], 6);
+
+/**
+ countBinarySearch([1, 2, 3, 4, 5], 1); - 
+
+countBinarySearch([1,2,3,4,5],5) => 1 expected 3 -- ?? 2
+countBinarySearch([1,2,3,4,5],1) => 2 expected 2 -- 
+countBinarySearch([1,2,3,4,5],2) => 3 expected 3
+countBinarySearch([1,2,3,4,5],3) => 3 expected 1
+countBinarySearch([1,2,3,4,5],6) => undefined expected 3
+ 
+ */
+
+/** -------- Partial functional
+ * let nrApelari = 1;
+
+function countBinarySearch(arr, nr) {
+  let mijloc = Math.floor(arr.length / 2);
+  if (arr.length === 1 && arr[0] !== nr) {
+    return nrApelari;
+  }
+  if (nr === arr[mijloc]) {
+    return nrApelari;
+  } else if (nr < arr[mijloc]) {
+    nrApelari++;
+    return countBinarySearch(arr.slice(0, mijloc), nr);
+  } else if (nr > arr[mijloc]) {
+    nrApelari++;
+    return countBinarySearch(arr.slice(mijloc), nr);
+  }
+}
+
+ */

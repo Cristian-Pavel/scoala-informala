@@ -1,0 +1,70 @@
+.container {
+  height: 70%;
+  max-width: 800px;
+  /* background-color: aqua; */
+  border: 1px solid black;
+  margin: 70px auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.contentContainer {
+  height: 100%;
+  width: 55%;
+  /* background-color: brown; */
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: center;
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 50px;
+  margin-top: 30px;
+}
+
+input {
+  margin-bottom: 20px;
+}
+
+#firstName,
+#lastName {
+  width: 100%;
+}
+
+.radioContainer {
+  margin-top: 10px;
+  margin-left: 30px;
+  margin-bottom: 10px;
+}
+
+.radioContainer #male,
+#female {
+  display: inline-block;
+  margin-bottom: 0;
+}
+
+#submitBtn {
+  background-color: #159db2;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  position: relative;
+  left: 238px;
+  color: white;
+  padding: 7px 14px;
+  border-radius: 5px;
+  border: 1px solid #998585;
+}
+
+#catImg {
+  display: inline;
+}
+
+.empty {
+  border: 1px solid red;
+}

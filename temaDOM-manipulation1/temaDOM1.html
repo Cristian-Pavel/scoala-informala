@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema DOM 1 - Cristi Pavel</title>
+    <link rel="stylesheet" href="temaDOM1CSS.css">
+</head>
+<body>
+    <div class="container">
+        <div class="contentContainer">
+            	<form id="form" action="temaDOM1JS.js">
+                    <input type="text" id="firstName" placeholder="First Name">
+                    <input type="text" id="lastName" placeholder="Last Name">
+                    <label for="radio">Gender</label>
+                    <div class="radioContainer">
+                        <input type="radio" name="gender" id="male">
+                        <label for="male">M</label>
+                        <br>
+                        <input type="radio" name="gender" id="female">
+                        <label for="female">F</label>
+                    </div>
+
+                    <textarea name="textarea" id="textArea" cols="40" rows="10" placeholder="Your message here..."></textarea>
+                    <input type="submit" value="Submit" id="submitBtn" onclick="validateCompletion();">
+                    <!-- <button id="submitBtn" onclick="validateCompletion();">Submit</button> -->
+                </form>
+
+        </div>
+        <img id="catImg" src="/smallCoronaCat.jpg" alt="coronaCat">
+
+
+    </div>
+    <script src="temaDOM1JS.js"></script>
+</body>
+</html>
