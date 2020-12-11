@@ -1,3 +1,12 @@
+.confirmationBanner {
+  height: 30px;
+  max-width: 802px;
+  background-color: rgb(114, 190, 114);
+  position: relative;
+  top: 68px;
+  left: 358px;
+}
+
 .container {
   height: 70%;
   max-width: 800px;
@@ -66,5 +75,5 @@ input {
 }
 
 .empty {
-  border: 1px solid red;
+  border: 10px solid red;
 }
