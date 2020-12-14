@@ -3,13 +3,50 @@
   max-width: 802px;
   background-color: #def0d8;
   position: relative;
-  top: 68px;
-  left: 358px;
+  top: 62px;
+  left: 359px;
   display: none;
 }
 
 .fa-check-circle {
   color: green;
+  position: relative;
+  top: 6px;
+  left: 3px;
+}
+
+#confirmationBanner p {
+  display: inline-block;
+  position: relative;
+  top: 5px;
+  left: 5px;
+  margin: 0;
+  color: rgb(27, 87, 27);
+}
+
+.fa-times {
+  color: green;
+  position: relative;
+  top: 6px;
+  left: 527px;
+}
+
+.tooltipText {
+  visibility: hidden;
+  position: absolute;
+  display: inline-block;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 100px;
+  left: 6px;
+  bottom: 13px;
+  background-color: white;
+  color: red;
+}
+
+.fa-times:hover .tooltipText {
+  visibility: visible;
 }
 
 .container {

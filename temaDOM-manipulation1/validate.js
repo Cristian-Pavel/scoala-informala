@@ -3,19 +3,25 @@ let elements = {
   lastName: document.querySelector("#lastName"),
   textArea: document.querySelector("#textArea"),
   confirmationBanner: document.querySelector("#confirmationBanner"),
+  numeConfirmare: document.querySelector("#numeConfirmare"),
 };
 
 function validateCompletion() {
-  let validation = false;
-  if (elements.firstName.value === "") {
+  if (elements.firstName.value === "" || elements.firstName.value.length < 2) {
     elements.firstName.classList.add("empty");
-  } else if (elements.lastName.value === "") {
+    return false;
+  } else if (
+    elements.lastName.value === "" ||
+    elements.lastName.value.length < 2
+  ) {
     elements.lastName.classList.add("empty");
+    return false;
   } else if (elements.textArea.value === "") {
     elements.textArea.classList.add("empty");
+    return false;
   } else {
-    validation = true;
     showConfirmation();
+    return false;
   }
 }
 
@@ -25,11 +31,8 @@ function removeBorder(elem) {
 
 function showConfirmation() {
   elements.confirmationBanner.style.display = "block";
-  let str = `
-      <i class="fas fa-check-circle"></i>
-        Thank you for contacting us, ${elements.firstName.value}!
-      `;
-  elements.confirmationBanner.innerHTML = str;
+  let str = `${elements.firstName.value}`;
+  elements.numeConfirmare.innerHTML = str;
 
   console.log(`First name is: ${elements.firstName.value}`);
   console.log(`Last name is: ${elements.lastName.value}`);
@@ -49,4 +52,3 @@ function showConfirmation() {
 
 //   let chatMessages = document.querySelector("#chatMessages");
 //   chatMessages.innerHTML = str;
-// }

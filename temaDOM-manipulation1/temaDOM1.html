@@ -12,8 +12,9 @@
 </head>
 <body>
     <div id="confirmationBanner">
-        <!-- <i class="fas fa-check-circle"></i>
-        Thank you for contacting us, Alexandra! -->
+        <i class="fas fa-check-circle"></i>
+        <p>Thank you for contacting us, <span id="numeConfirmare"></span>!</p>
+        <i class="fas fa-times" onclick="window.location.reload();"><span class="tooltipText">Click here for reset!</span></i>
         
     </div>
     <div class="container">
@@ -31,12 +32,12 @@
                         <label for="female">F</label>
                     </div>
 
-                    <textarea name="textarea" id="textArea" cols="40" rows="10" placeholder="Your message here..." onclick="removeBorder(this);"></textarea>
-                    <input type="submit" value="Submit" id="submitBtn" onclick="validateCompletion();"  required>
-                    <!-- <button id="submitBtn" onclick="validateCompletion();">Submit</button> -->
+                    <textarea name="textarea" id="textArea" cols="40" rows="10" placeholder="Your message here..." onclick="removeBorder(this);" required></textarea>
+                    <input type="submit" value="Submit" id="submitBtn" onclick="return validateCompletion();">
+                   
                 </form>
         </div>
-        <img id="catImg" src="/smallCoronaCat.jpg" alt="coronaCat">
+        <img id="catImg" src="smallCoronaCat.jpg" alt="coronaCat">
     </div>
     <script src="validate.js"></script>
 
