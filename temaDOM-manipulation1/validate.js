@@ -2,9 +2,11 @@ let elements = {
   firstName: document.querySelector("#firstName"),
   lastName: document.querySelector("#lastName"),
   textArea: document.querySelector("#textArea"),
+  confirmationBanner: document.querySelector("#confirmationBanner"),
 };
 
 function validateCompletion() {
+  let validation = false;
   if (elements.firstName.value === "") {
     elements.firstName.classList.add("empty");
   } else if (elements.lastName.value === "") {
@@ -12,8 +14,26 @@ function validateCompletion() {
   } else if (elements.textArea.value === "") {
     elements.textArea.classList.add("empty");
   } else {
-    elements.textArea.classList.remove("empty");
+    validation = true;
+    showConfirmation();
   }
+}
+
+function removeBorder(elem) {
+  elem.classList.remove("empty");
+}
+
+function showConfirmation() {
+  elements.confirmationBanner.style.display = "block";
+  let str = `
+      <i class="fas fa-check-circle"></i>
+        Thank you for contacting us, ${elements.firstName.value}!
+      `;
+  elements.confirmationBanner.innerHTML = str;
+
+  console.log(`First name is: ${elements.firstName.value}`);
+  console.log(`Last name is: ${elements.lastName.value}`);
+  console.log(`The written message: ${elements.textArea.value}`);
 }
 
 // function draw() {

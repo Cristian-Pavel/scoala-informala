@@ -1,10 +1,15 @@
-.confirmationBanner {
+#confirmationBanner {
   height: 30px;
   max-width: 802px;
-  background-color: rgb(114, 190, 114);
+  background-color: #def0d8;
   position: relative;
   top: 68px;
   left: 358px;
+  display: none;
+}
+
+.fa-check-circle {
+  color: green;
 }
 
 .container {
@@ -75,5 +80,5 @@ input {
 }
 
 .empty {
-  border: 10px solid red;
+  border: 5px solid red;
 }
