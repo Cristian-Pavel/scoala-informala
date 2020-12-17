@@ -262,54 +262,49 @@ function ordonare(arr) {
 
 // 15. O functie care implementeaza binary search pentru a verifica daca un numar se regaseste intr-un array. Dupa ce se termina executia functiei trebuie sa returnati de cate ori s-a apelat functia recursiv ("countBinarySearch")
 
+// function countBinarySearch(arr, nr) { // Varianta care functioneaza dar nu e o apelare recursiva a functiei, deci nu respecta cerinta
+//   let nrApelari = 0;
+//   let arrOrdonat = ordonare(arr);
+//   let mijloc;
+//   let inceput = 0;
+//   let sfarsit = arrOrdonat.length - 1;
+//   while (inceput <= sfarsit) {
+//     mijloc = Math.trunc((inceput + sfarsit) / 2);
+//     nrApelari++;
+//     if (arrOrdonat[mijloc] === nr) {
+//       return nrApelari;
+//     } else if (arrOrdonat[mijloc] < nr) {
+//       inceput = mijloc + 1;
+//     } else {
+//       sfarsit = mijloc - 1;
+//     }
+//   }
+//   return nrApelari;
+// }
+
 let nrApelari = 1;
 
 function countBinarySearch(arr, nr) {
-  let mijloc = Math.floor(arr.length / 2);
-  if (arr.length === 1 && arr[mijloc] !== nr) {
-    return nrApelari; // nu se gaseste in sir
+  ordonare(arr);
+  let mijloc;
+  if (arr.length % 2 === 0) {
+    mijloc = Math.floor(arr.length / 2) - 1;
+  } else {
+    mijloc = Math.floor(arr.length / 2);
   }
-  if (nr === arr[mijloc]) {
-    return nrApelari;
-  } else if (nr < arr[mijloc]) {
-    nrApelari++;
-    return countBinarySearch(arr.slice(0, mijloc), nr);
-  } else if (nr > arr[mijloc]) {
-    nrApelari++;
-    return countBinarySearch(arr.slice(mijloc+1), nr);
-  }
-}
-
-countBinarySearch([1, 2, 3, 4, 5], 6);
-
-/**
- countBinarySearch([1, 2, 3, 4, 5], 1); - 
-
-countBinarySearch([1,2,3,4,5],5) => 1 expected 3 -- ?? 2
-countBinarySearch([1,2,3,4,5],1) => 2 expected 2 -- 
-countBinarySearch([1,2,3,4,5],2) => 3 expected 3
-countBinarySearch([1,2,3,4,5],3) => 3 expected 1
-countBinarySearch([1,2,3,4,5],6) => undefined expected 3
- 
- */
-
-/** -------- Partial functional
- * let nrApelari = 1;
-
-function countBinarySearch(arr, nr) {
-  let mijloc = Math.floor(arr.length / 2);
   if (arr.length === 1 && arr[0] !== nr) {
+    // in cazul in care nu se gaseste in sir
+    console.log(nrApelari);
     return nrApelari;
-  }
-  if (nr === arr[mijloc]) {
+  } else if (nr === arr[mijloc]) {
+    // atunci cand l-a gasit
+    console.log(nrApelari);
     return nrApelari;
   } else if (nr < arr[mijloc]) {
     nrApelari++;
     return countBinarySearch(arr.slice(0, mijloc), nr);
   } else if (nr > arr[mijloc]) {
     nrApelari++;
-    return countBinarySearch(arr.slice(mijloc), nr);
+    return countBinarySearch(arr.slice(mijloc + 1), nr);
   }
 }
-
- */
