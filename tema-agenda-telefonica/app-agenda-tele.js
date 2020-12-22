@@ -13,12 +13,7 @@ let elementsDOM = {
   form: document.querySelector("form"),
 };
 
-let listaContacte = [
-  {
-    nume: "",
-    nrTelef: "",
-  },
-];
+let listaContacte = [];
 
 // Functii
 /////////////////
@@ -37,7 +32,7 @@ function adauga() {
 
 function draw() {
   let str = "";
-  for (let i = 1; i < listaContacte.length; i++) {
+  for (let i = 0; i < listaContacte.length; i++) {
     str += `
         <tr>
             <td>${listaContacte[i].nume}</td>
@@ -48,9 +43,7 @@ function draw() {
         `;
   }
   elementsDOM.tableBody.innerHTML = str;
-  if (listaContacte.length > 1) {
-    elementsDOM.table.classList.remove("hidden");
-  }
+  elementsDOM.table.classList.remove("hidden");
 }
 
 function sterge(idx) {
