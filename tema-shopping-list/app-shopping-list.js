@@ -68,13 +68,17 @@ function markedAsBuyed(i) {
 }
 
 function sortAsc() {
-  let temporar;
+  let temporar, markedTemporar;
   for (let i = 0; i < listaCumparaturi.length - 1; i++) {
     for (let j = i + 1; j < listaCumparaturi.length; j++) {
       if (listaCumparaturi[i].item > listaCumparaturi[j].item) {
         temporar = listaCumparaturi[i].item;
         listaCumparaturi[i].item = listaCumparaturi[j].item;
         listaCumparaturi[j].item = temporar;
+
+        markedTemporar = listaCumparaturi[i].buyed;
+        listaCumparaturi[i].buyed = listaCumparaturi[j].buyed;
+        listaCumparaturi[j].buyed = markedTemporar;
       }
     }
   }
@@ -82,13 +86,17 @@ function sortAsc() {
 }
 
 function sortDesc() {
-  let temporar;
+  let temporar, markedTemporar;
   for (let i = 0; i < listaCumparaturi.length - 1; i++) {
     for (let j = i + 1; j < listaCumparaturi.length; j++) {
       if (listaCumparaturi[i].item < listaCumparaturi[j].item) {
         temporar = listaCumparaturi[i].item;
         listaCumparaturi[i].item = listaCumparaturi[j].item;
         listaCumparaturi[j].item = temporar;
+
+        markedTemporar = listaCumparaturi[i].buyed;
+        listaCumparaturi[i].buyed = listaCumparaturi[j].buyed;
+        listaCumparaturi[j].buyed = markedTemporar;
       }
     }
   }
