@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style-agenda-telef.css">
+    <title>Tema agenda telefonica</title>
+</head>
+<body>
+    <div class="container">
+        <form onsubmit="event.preventDefault();">
+            <h1 id="titluAgenda">Agenda</h1>
+            <section class="inputs">
+                <label for="nume">Nume: </label>
+                <input type="text" name="nume" onkeypress="return event.keyCode!==13" onblur="validareNume();" onfocus="clearInvalid(this)">
+                <label for="telefon">Telefon: </label>
+                <input type="tel" name="telefon" onblur="validareTelefon();" onfocus="clearInvalid(this)">
+                <br>
+                <input type="submit" value="Adauga contact" id="AdaugaBtn" onclick="adauga();">
+            </section>
+        </form>
+        <table class="hidden">
+            <thead>
+                <tr id="titluTabel">
+                    <th>Nume</th>
+                    <th>Telefon</th>
+                    <th>(Modifica)</th>
+                    <th>(Sterge)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- <tr>
+                    <td>${listaContacte[i].nume}</td>
+                    <td>${listaContacte[i].nrTelef}</td>
+                    <td><a onclick="modifica(${i})">Modifica</a></td>
+                    <td><a onclick="sterge(${i})">Sterge</a></td>
+                </tr> -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="app-agenda-tele.js"></script>
+</body>
+</html>
