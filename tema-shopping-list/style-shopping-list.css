@@ -1,0 +1,79 @@
+body {
+  background-color: #d0bcfe;
+}
+
+* {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.content {
+  background-color: #fffdff;
+  max-width: 500px;
+  height: fit-content;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.adaugare {
+  width: 300px;
+  margin: 15px;
+  display: flex;
+}
+
+#campScriere {
+  min-width: 200px;
+}
+
+#addItemBtn {
+  padding: 10px;
+  background-color: #71fd95;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+.sortingButtons {
+  width: 100%;
+  margin: 10px auto;
+  display: flex;
+  justify-content: start;
+}
+
+.sortAsc {
+  margin-left: 100px;
+}
+
+.sortDesc {
+  margin-left: 15px;
+}
+
+.sortAsc,
+.sortDesc {
+  background-color: #e19bfc;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+table {
+  min-width: 300px;
+}
+
+th {
+  text-align: start;
+}
+
+.markedAsBuyed {
+  background-color: #ff9797;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+.taiat {
+  text-decoration: line-through;
+}

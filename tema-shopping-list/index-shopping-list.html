@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style-shopping-list.css">
+    <title>Shopping-List-Cristi_Pavel</title>
+</head>
+<body>
+    <div class="container">
+        <section class="content">
+            <h1 id="titlu">Shopping List</h1>
+            <form class="adaugare" onsubmit="event.preventDefault();">
+                <label for="campScriere"></label>
+                <input type="text" name="campScriere" id="campScriere">
+                <input type="button" value="Add item" id="addItemBtn" onclick="adauga();">
+            </form>
+            <section class="sortingButtons">
+                <button class="sortAsc">Sort asc</button>
+                <button class="sortDesc">Sort desc</button>
+            </section>
+           
+            <table class="hidden">
+                <thead>
+                    <tr>
+                        <th>Item description</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+               <tbody>
+                   <!-- <tr>
+                       <td class="itemCumparat">Lapte</td>
+                       <td><button class="markedAsBuyed">Mark as buyed</button></td>
+                   </tr> -->
+               </tbody>
+            </table>
+        </section>
+    </div>
+    <script src="app-shopping-list.js"></script>
+</body>
+</html>

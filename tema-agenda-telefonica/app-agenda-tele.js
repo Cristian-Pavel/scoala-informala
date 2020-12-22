@@ -48,7 +48,9 @@ function draw() {
         `;
   }
   elementsDOM.tableBody.innerHTML = str;
-  elementsDOM.table.classList.remove("hidden");
+  if (listaContacte.length > 1) {
+    elementsDOM.table.classList.remove("hidden");
+  }
 }
 
 function sterge(idx) {
