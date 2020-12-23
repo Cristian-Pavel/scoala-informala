@@ -37,8 +37,8 @@ function draw() {
         <tr>
             <td>${listaContacte[i].nume}</td>
             <td>${listaContacte[i].nrTelef}</td>
-            <td><a href="#" onclick="modifica(${i})">Modifica</a></td>
-            <td><a href="#" onclick="sterge(${i})">Sterge</a></td>
+            <td><a href="#" onclick="modifica(${i})" id="modificaBtn" >Modifica</a></td>
+            <td><a href="#" onclick="sterge(${i})"id="stergeBtn">Sterge</a></td>
         </tr>
         `;
   }

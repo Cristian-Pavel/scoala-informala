@@ -3,17 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/10d7b288ec.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style-agenda-telef.css">
     <title>Tema agenda telefonica</title>
 </head>
 <body>
     <div class="container">
         <form onsubmit="event.preventDefault();">
-            <h1 id="titluAgenda">Agenda</h1>
+            <i class="fas fa-phone-square"></i>
+            <h1 id="titluAgenda">Agenda </h1>
+           
             <section class="inputs">
-                <label for="nume">Nume: </label>
+                <label for="nume">Nume </label>
                 <input type="text" name="nume" onkeypress="return event.keyCode!==13" onfocus="clearInvalid(this)">
-                <label for="telefon">Telefon: </label>
+                <label for="telefon">Telefon </label>
                 <input type="tel" name="telefon" onfocus="clearInvalid(this)">
                 <br>
                 <input type="submit" value="Adauga contact" id="AdaugaBtn" onclick="adauga();">
@@ -24,8 +27,8 @@
                 <tr id="titluTabel">
                     <th>Nume</th>
                     <th>Telefon</th>
-                    <th>(Modifica)</th>
-                    <th>(Sterge)</th>
+                    <th></th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
