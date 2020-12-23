@@ -1,20 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap");
+
 body {
-  background-color: #d0bcfe;
+  background-image: url(Vector_Seamless_Shopping_Cart_With_Gold_Coins_Style_Pattern_Abstract_Background-01.jpg);
+  background-size: cover;
 }
 
 * {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: "Gochi Hand", cursive;
+  font-size: 1.2rem;
 }
 
 .content {
-  background-color: #fffdff;
-  max-width: 500px;
+  background-color: #b1b1b1d7;
+  max-width: 588px;
+  border-radius: 20px;
   height: fit-content;
   margin: 20px auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-bottom: 24px;
+}
+
+#titlu {
+  font-size: 3rem;
+  margin-bottom: 5px;
 }
 
 .adaugare {
@@ -24,50 +35,86 @@ body {
 }
 
 #campScriere {
-  min-width: 200px;
+  position: relative;
+  left: -58px;
+  min-width: 292px;
+  margin-right: 5px;
 }
 
 #addItemBtn {
+  background-color: #ff9797;
   padding: 10px;
-  background-color: #71fd95;
   border-radius: 5px;
-  margin-left: 10px;
+  position: relative;
+  left: -57px;
+  border: 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+
+#addItemBtn:hover {
+  transform: scale(1.1);
+  transition: 200ms;
 }
 
 .sortingButtons {
   width: 100%;
   margin: 10px auto;
-  display: flex;
-  justify-content: start;
+  position: relative;
+  left: 49px;
 }
 
 .sortAsc {
   margin-left: 100px;
 }
 
+.sortAsc:hover {
+  transform: translateY(-5px);
+  transition: 200ms;
+}
+
 .sortDesc {
   margin-left: 15px;
 }
 
+.sortDesc:hover {
+  transform: translateY(5px);
+  transition: 200ms;
+}
+
 .sortAsc,
 .sortDesc {
-  background-color: #e19bfc;
+  background-color: #b4aab8;
   border-radius: 5px;
-  padding: 5px 10px;
+  padding: 5px 15px;
+  border: 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
 }
 
 table {
-  min-width: 300px;
+  min-width: 392px;
 }
 
 th {
   text-align: start;
+  padding: 10px 0;
+  font-size: 1.8rem;
+}
+
+tr th:nth-child(2) {
+  padding-left: 20px;
 }
 
 .markedAsBuyed {
   background-color: #ff9797;
   border-radius: 5px;
   padding: 5px 10px;
+  border: 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+
+.markedAsBuyed:hover {
+  transform: translateX(5px);
+  transition: 200ms;
 }
 
 .hidden {
@@ -76,4 +123,16 @@ th {
 
 .taiat {
   text-decoration: line-through;
+}
+
+.eroare {
+  border: 2px solid red;
+}
+
+.itemCumparat {
+  padding: 10px;
+}
+
+.fa-check {
+  color: #2d5034;
 }

@@ -32,13 +32,15 @@ elementeDOM.sortDescBtn.addEventListener("click", sortDesc);
 ////////////////////
 
 function adauga() {
-  let item = elementeDOM.inputText.value;
-  listaCumparaturi.push({
-    item: item,
-    buyed: false,
-  });
-  draw();
-  elementeDOM.formular.reset();
+  if (validare()) {
+    let item = elementeDOM.inputText.value;
+    listaCumparaturi.push({
+      item: item,
+      buyed: false,
+    });
+    draw();
+    elementeDOM.formular.reset();
+  }
 }
 
 function draw() {
@@ -48,7 +50,8 @@ function draw() {
         <tr>
             <td class="itemCumparat">${listaCumparaturi[i].item}</td>
             <td>
-                <button class="markedAsBuyed" onclick="markedAsBuyed(${i})">Mark as buyed</button>
+                <button class="markedAsBuyed" onclick="markedAsBuyed(${i})" 
+                ><i class="fas fa-check"></i> Mark as buyed</button>
             </td>
         </tr>
         `;
@@ -101,4 +104,15 @@ function sortDesc() {
     }
   }
   draw();
+}
+
+function validare() {
+  if (elementeDOM.inputText.value.length < 2) {
+    elementeDOM.inputText.classList.add("eroare");
+    alert("Nu ati introdus niciun produs.");
+    return false;
+  } else {
+    elementeDOM.inputText.classList.remove("eroare");
+    return true;
+  }
 }
