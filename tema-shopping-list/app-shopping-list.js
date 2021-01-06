@@ -66,7 +66,11 @@ function draw() {
 }
 
 function markedAsBuyed(i) {
-  listaCumparaturi[i].buyed = true;
+  if (listaCumparaturi[i].buyed === false) {
+    listaCumparaturi[i].buyed = true;
+  } else {
+    listaCumparaturi[i].buyed = false;
+  }
   draw();
 }
 
