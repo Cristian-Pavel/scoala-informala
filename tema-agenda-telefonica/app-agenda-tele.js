@@ -63,7 +63,7 @@ function modifica(idx) {
   elementsDOM.inputNume.value = listaContacte[idx].nume;
   elementsDOM.inputTelef.value = listaContacte[idx].nrTelef;
   indexEditare = idx;
-  elementsDOM.adaugaBtn.value = "Adauga modificare contact";
+  elementsDOM.adaugaBtn.value = "Modificare contact";
   elementsDOM.adaugaBtn.onclick = modificareConfirmata;
 }
 
