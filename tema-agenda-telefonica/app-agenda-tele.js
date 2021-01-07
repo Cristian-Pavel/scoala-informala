@@ -96,7 +96,7 @@ function validareNume() {
 function validareTelefon() {
   if (
     elementsDOM.inputTelef.value.length < 10 ||
-    !/[0-9]/.test(elementsDOM.inputTelef.value)
+    !/^\d+$/.test(elementsDOM.inputTelef.value)
   ) {
     elementsDOM.inputTelef.classList.add("eroare");
     alert("Va rugam verificati numarul de telefon introdus");
