@@ -6,13 +6,14 @@
   text-align: center;
 }
 .container {
-  max-width: 1200px;
+  max-width: 800px;
   height: 100vh;
   background: #1201af;
   background: -webkit-linear-gradient(top left, #1201af, #d335eb);
   background: -moz-linear-gradient(top left, #1201af, #d335eb);
   background: linear-gradient(to bottom right, #1201af, #d335eb);
   margin: 0 auto;
+  padding: 5px 30px;
   border-radius: 20px;
   box-shadow: 0 0 10px gray;
 }
@@ -22,7 +23,7 @@
   top: 10px;
   width: 98%;
   min-height: 43px;
-  margin: 20px auto;
+  margin: 5px auto;
   background-color: honeydew;
   border-radius: 12px;
   display: flex;
@@ -76,11 +77,18 @@ hr {
   left: 9px;
 }
 
+#currentWeatherIcon {
+  position: relative;
+  left: 86px;
+  top: 10px;
+  padding: 10px;
+}
+
 .cityMap {
   position: relative;
-  left: 52px;
+  left: 36px;
   top: 13px;
-  width: 440px;
+  width: 60%;
   /* background-color: aqua; */
   height: 90%;
 }
