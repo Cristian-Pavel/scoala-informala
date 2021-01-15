@@ -10,15 +10,45 @@
     <h1 class="title">weatherApp</h1>
     <div class="container">
         <div class="searchBar">
-            <input type="text" class="input" placeholder="Scrieti aici orasul in limba engleza">
-            <button class="btn">Afiseaza vremea</button>
+            <input type="text" class="input" id="city" placeholder="Scrieti aici orasul in limba engleza">
+            <button class="btn" onclick="showNow();">Afiseaza vremea</button>
             <button class="btn">Afiseaza prognoza</button>
         </div>
         <div class="vremeaAcum">
             <h3 class="subTitluri">Vremea acum</h3>
+            <hr>
+            <div class="vremeaAcumContainer">
+
+            <div class="curWeatherInfo">
+                <!-- <img src="#" alt="weatherImg"> -->
+                <ul>
+                    <li>Descriere: </li>
+                    <li>Umiditate: </li>
+                    <li>Presiune: </li>
+                    <li>Temperatura curenta:</li>
+                    <li>Minima zilei: </li>
+                    <li>Maxima zilei:</li>
+                </ul>
+                </div>
+            <!-- <div class="curWeatherInfo">
+                <img src="#" alt="weatherImg">
+                <ul>
+                    <li>Descriere: ${curWeather.weather[0].main}  </li>
+                    <li>Umiditate: ${curWeather.main.humidity} %</li>
+                    <li>Presiune: ${curWeather.main.pressure} mmHg</li>
+                    <li>Temperatura curenta: ${curWeather.main.temp} °C</li>
+                    <li>Minima zilei: ${curWeather.main.temp_min} °C</li>
+                    <li>Maxima zilei: ${curWeather.main.temp_max} °C</li>
+                </ul>
+                </div>
+                <div class="cityMap">
+                  <iframe width="100%" height="100%" id="gmap_canvas" src="https://maps.google.com/maps?q=${city}&t=&z=11&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                </div> -->
+            </div>
         </div>
         <div class="vremeaPrognoza">
             <h3 class="subTitluri">Vremea in urmatoarele zile</h3>
+            <hr>
 
         </div>
     </div>

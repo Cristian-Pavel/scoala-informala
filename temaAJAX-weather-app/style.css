@@ -1,6 +1,5 @@
 * {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 .title {
@@ -58,7 +57,30 @@
   border-radius: 12px;
 }
 
+.vremeaAcumContainer {
+  display: flex;
+  flex-direction: row;
+  height: 85%;
+  padding: 5px;
+}
+
 .subTitluri {
   display: inline-block;
   margin: 5px 10px;
+}
+
+hr {
+  max-width: 98%;
+  margin: 0;
+  position: relative;
+  left: 9px;
+}
+
+.cityMap {
+  position: relative;
+  left: 52px;
+  top: 13px;
+  width: 440px;
+  /* background-color: aqua; */
+  height: 90%;
 }
