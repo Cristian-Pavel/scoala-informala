@@ -12,7 +12,7 @@
         <div class="searchBar">
             <input type="text" class="input" id="city" placeholder="Scrieti aici orasul in limba engleza">
             <button class="btn" onclick="showNow();">Afiseaza vremea</button>
-            <button class="btn">Afiseaza prognoza</button>
+            <button class="btn" onclick="showForecast();">Afiseaza prognoza</button>
         </div>
         <div class="vremeaAcum">
             <h3 class="subTitluri">Vremea acum</h3>
@@ -47,9 +47,88 @@
             </div>
         </div>
         <div class="vremeaPrognoza">
-            <h3 class="subTitluri">Vremea in urmatoarele zile</h3>
+            <h3 class="subTitluri">Vremea in urmatoarele 5 zile</h3>
             <hr>
-
+            <div class="gridContainer">
+                <!-- <div class="prognoza">
+                    <p class="ziua">Ziua: </p>
+                    <img src="http://openweathermap.org/img/w/04d.png" alt="weatherImg" class="imgPrognoza">
+                    <p>Ora: </p>
+                    <p>Temperatura: </p>
+                    <p>Descriere: </p>
+                </div>
+                <div class="prognoza">
+                    <p class="ziua">Ziua: </p>
+                    <img src="http://openweathermap.org/img/w/04d.png" alt="weatherImg" class="imgPrognoza">
+                    <p>Ora: </p>
+                    <p>Temperatura: </p>
+                    <p>Descriere: </p>
+                </div>
+                <div class="prognoza">
+                    <p class="ziua">Ziua: </p>
+                    <img src="http://openweathermap.org/img/w/04d.png" alt="weatherImg" class="imgPrognoza">
+                    <p>Ora: </p>
+                    <p>Temperatura: </p>
+                    <p>Descriere: </p>
+                </div>
+                <div class="prognoza">
+                    <p class="ziua">Ziua: </p>
+                    <img src="http://openweathermap.org/img/w/04d.png" alt="weatherImg" class="imgPrognoza">
+                    <p>Ora: </p>
+                    <p>Temperatura: </p>
+                    <p>Descriere: </p>
+                </div>
+                <div class="prognoza">
+                    <p class="ziua">Ziua: </p>
+                    <img src="http://openweathermap.org/img/w/04d.png" alt="weatherImg" class="imgPrognoza">
+                    <p>Ora: </p>
+                    <p>Temperatura: </p>
+                    <p>Descriere: </p>
+                </div>
+                <div class="prognoza">
+                    <p class="ziua">Ziua: </p>
+                    <img src="http://openweathermap.org/img/w/04d.png" alt="weatherImg" class="imgPrognoza">
+                    <p>Ora: </p>
+                    <p>Temperatura: </p>
+                    <p>Descriere: </p>
+                </div>
+                <div class="prognoza">
+                    <p class="ziua">Ziua: </p>
+                    <img src="http://openweathermap.org/img/w/04d.png" alt="weatherImg" class="imgPrognoza">
+                    <p>Ora: </p>
+                    <p>Temperatura: </p>
+                    <p>Descriere: </p>
+                </div>
+                <div class="prognoza">
+                    <p class="ziua">Ziua: </p>
+                    <img src="http://openweathermap.org/img/w/04d.png" alt="weatherImg" class="imgPrognoza">
+                    <p>Ora: </p>
+                    <p>Temperatura: </p>
+                    <p>Descriere: </p>
+                </div>
+                <div class="prognoza">
+                    <p class="ziua">Ziua: </p>
+                    <img src="http://openweathermap.org/img/w/04d.png" alt="weatherImg" class="imgPrognoza">
+                    <p>Ora: </p>
+                    <p>Temperatura: </p>
+                    <p>Descriere: </p>
+                </div>
+                <div class="prognoza">
+                    <p class="ziua">Ziua: </p>
+                    <img src="http://openweathermap.org/img/w/04d.png" alt="weatherImg" class="imgPrognoza">
+                    <p>Ora: </p>
+                    <p>Temperatura: </p>
+                    <p>Descriere: </p>
+                </div>
+                <div class="prognoza">
+                    <p class="ziua">Ziua: </p>
+                    <img src="http://openweathermap.org/img/w/04d.png" alt="weatherImg" class="imgPrognoza">
+                    <p>Ora: </p>
+                    <p>Temperatura: </p>
+                    <p>Descriere: </p>
+                </div>
+                -->
+            </div>
         </div>
     </div>
     <script src="./weatherApp.js"></script>

@@ -1,10 +1,7 @@
-// "use strict";
+"use strict";
 
 /**
- * TODO:
- * 1) Importam API vreme (on load, functie get)
- * 2) Importam API iframe harta
- * 3) Afisam sectiune vreme si sectiune harta
+ * Sectiunea current weather
  */
 
 let urlCurrentWeather =
@@ -41,7 +38,7 @@ function draw(curWeather, city) {
       <div class="curWeatherInfo">
       <img src="http://openweathermap.org/img/w/${curWeather.weather[0].icon}.png" id="currentWeatherIcon" >
       <ul>
-          <li>Descriere: ${curWeather.weather[0].main}  </li>
+          <li>Descriere: ${curWeather.weather[0].main}</li>
           <li>Umiditate: ${curWeather.main.humidity} %</li>
           <li>Presiune: ${curWeather.main.pressure} mmHg</li>
           <li>Temperatura curenta: ${curWeather.main.temp} °C</li>
@@ -59,4 +56,64 @@ function draw(curWeather, city) {
 async function showNow() {
   let city = document.querySelector("#city").value;
   await getVremeAcum(city);
+}
+
+/**
+ * Sectiunea prognoza
+ */
+
+/**
+ * TODO:
+ *
+ * 1) Cream template folosind grid ✅
+ * 2) Afisam generatorul de data
+ * 3) Afisam vremea
+ *    3.1) Functie separata de transformat data din unix in date
+ *
+ */
+
+let urlForecastWeather =
+  "https://api.openweathermap.org/data/2.5/forecast?appid=69518b1f8f16c35f8705550dc4161056&units=metric&q=";
+
+let forecast = {};
+
+async function showForecast() {
+  let city = document.querySelector("#city").value;
+  await getForecast(city);
+}
+
+async function getForecast(city) {
+  const response = await fetch(urlForecastWeather + city);
+  forecast = await response.json();
+  if (forecast === null) forecast = {};
+  drawForecast(forecast);
+}
+
+function drawForecast(forecast) {
+  let str = "";
+  // parcurg pana la 40 pentru ca prognoza din 3 in 3 ore timp de 5 zile am calculat-o ca 24/3 = 8 * 5 = 40 de intrari
+  for (let j = 0; j < 40; j++) {
+    str += `
+      <div class="prognoza">
+        <p class="ziua">Ziua:<span class="bold">${forecast.list[
+          j
+        ].dt_txt.substr(0, 10)}</span></p>
+        <img src="http://openweathermap.org/img/w/${
+          forecast.list[j].weather[0].icon
+        }.png" alt="weatherImg" class="imgPrognoza">
+        <p>Ora:<span class="bold"> ${forecast.list[j].dt_txt.substr(
+          11,
+          5
+        )}</span></p>
+        <p>Temperatura:<span class="bold"> ${
+          forecast.list[j].main.temp
+        }°C</span></p>
+        <p>Descriere:<span class="bold"> ${
+          forecast.list[j].weather[0].description
+        }</span></p>
+      </div>
+    `;
+  }
+
+  document.querySelector(".gridContainer").innerHTML = str;
 }
