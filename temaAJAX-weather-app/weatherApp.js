@@ -9,22 +9,6 @@ let urlCurrentWeather =
 
 let curWeather = {};
 
-// async function ajax(url, method, body) {
-//   let response = await fetch(url + ".json", {
-//     method: method,
-//     body: JSON.stringify(body),
-//     headers: {
-//       "Content-Type": "application/json",
-//     },
-//   });
-//   return await response.json();
-// }
-
-// async function getVremeAcum(city) {
-//   curWeather = await ajax(urlCurrentWeather + city, "GET");
-//   draw(curWeather, city);
-// }
-
 async function getVremeAcum(city) {
   const response = await fetch(urlCurrentWeather + city);
   curWeather = await response.json();
@@ -62,16 +46,6 @@ async function showNow() {
  * Sectiunea prognoza
  */
 
-/**
- * TODO:
- *
- * 1) Cream template folosind grid ✅
- * 2) Afisam generatorul de data
- * 3) Afisam vremea
- *    3.1) Functie separata de transformat data din unix in date
- *
- */
-
 let urlForecastWeather =
   "https://api.openweathermap.org/data/2.5/forecast?appid=69518b1f8f16c35f8705550dc4161056&units=metric&q=";
 
@@ -90,30 +64,40 @@ async function getForecast(city) {
 }
 
 function drawForecast(forecast) {
-  let str = "";
-  // parcurg pana la 40 pentru ca prognoza din 3 in 3 ore timp de 5 zile am calculat-o ca 24/3 = 8 * 5 = 40 de intrari
-  for (let j = 0; j < 40; j++) {
-    str += `
+  let sirZile = document.querySelectorAll(".gridDay");
+
+  let indexZi = 0;
+  let zi = forecast.list[0].dt_txt.substr(0, 10);
+  sirZile[
+    indexZi
+  ].innerHTML = `<p class="ziua">Ziua:<span class="bold">${zi}</span></p>`;
+
+  for (let i = 0; i < forecast.list.length; i++) {
+    let data = forecast.list[i].dt_txt.substr(0, 10);
+    let ora = forecast.list[i].dt_txt.substr(11, 5);
+    if (zi !== data) {
+      indexZi++;
+      zi = data;
+      sirZile[
+        indexZi
+      ].innerHTML += `<p class="ziua">Ziua:<span class="bold">${zi}</span></p>`;
+    }
+    sirZile[indexZi].innerHTML += `
       <div class="prognoza">
-        <p class="ziua">Ziua:<span class="bold">${forecast.list[
-          j
-        ].dt_txt.substr(0, 10)}</span></p>
         <img src="http://openweathermap.org/img/w/${
-          forecast.list[j].weather[0].icon
+          forecast.list[i].weather[0].icon
         }.png" alt="weatherImg" class="imgPrognoza">
-        <p>Ora:<span class="bold"> ${forecast.list[j].dt_txt.substr(
+        <p>Ora:<span class="bold"> ${forecast.list[i].dt_txt.substr(
           11,
           5
         )}</span></p>
         <p>Temperatura:<span class="bold"> ${
-          forecast.list[j].main.temp
+          forecast.list[i].main.temp
         }°C</span></p>
         <p>Descriere:<span class="bold"> ${
-          forecast.list[j].weather[0].description
+          forecast.list[i].weather[0].description
         }</span></p>
-      </div>
+       </div> 
     `;
   }
-
-  document.querySelector(".gridContainer").innerHTML = str;
 }
