@@ -1,0 +1,42 @@
+$blue-color: #0ea8f3;
+$red-color: #d10014;
+$yellow-color: #f8e816;
+$green-color: #0cbe13;
+$temporary-blue: rgba(110, 212, 238, 0.842);
+$temporary-brown: rgb(165, 111, 111);
+$temporary-gray: gray;
+$breakpoints: (
+  phone: 425px,
+  tablet: 768px,
+  laptop: 1024px,
+);
+
+@import "./header";
+@import "./main";
+
+* {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.mainContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  //   background-color: $temporary-blue;
+  height: 100vh;
+  border-radius: 5px;
+  border: 1px $blue-color solid;
+  box-shadow: 0px 0px 5px #888888;
+
+  [alt="Man sits at desk"] {
+    display: block;
+    margin: 0 30px;
+    max-width: 198px;
+  }
+}
+
+.flatIcon {
+  font-size: xx-small;
+  max-width: 200px;
+  margin: 0 auto;
+}

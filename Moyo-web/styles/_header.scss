@@ -1,0 +1,88 @@
+@mixin flexBox {
+  display: flex;
+  justify-content: space-around;
+}
+
+//////////////////////////////////
+// Phone version
+//////////////////////////////////
+
+@media (max-width: 603px) {
+  header {
+    display: flex;
+
+    .burgerMenu {
+      width: 50px;
+      margin: 5px;
+    }
+    [alt="LOGO - MOYO"] {
+      display: none;
+    }
+
+    .mobilePositioner {
+      position: absolute;
+      top: 70px;
+      left: 13px;
+    }
+    nav.hidden {
+      display: none;
+    }
+
+    nav {
+      display: flex;
+      flex-direction: column;
+      .navBtn {
+        background-color: #0ea8f3;
+        border-radius: 5px;
+        padding: 14px 84px;
+        margin: 2px;
+        font-size: 27px;
+        font-weight: 600;
+        border: 2px solid transparent;
+        box-shadow: 0px 0px 5px #888888;
+        &:hover {
+          background-color: azure;
+          border: 2px solid black;
+        }
+      }
+    }
+  }
+}
+
+//////////////////////////////////
+// Tablet and laptop
+//////////////////////////////////
+@media (min-width: 603px) {
+  header {
+    .burgerMenu {
+      display: none;
+    }
+    [alt="LOGO - MOYO"] {
+      height: auto;
+      max-width: 100px;
+      margin-left: 10px;
+    }
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    nav {
+      @include flexBox();
+      justify-content: flex-end;
+      margin-top: 20px;
+      margin-right: 10px;
+      .navBtn {
+        background-color: $blue-color;
+        font-size: 16px;
+        border-radius: 5px;
+        padding: 7px;
+        margin: 2px;
+        border: 2px solid transparent;
+        box-shadow: 0px 0px 5px #888888;
+        &:hover {
+          background-color: azure;
+          border: 2px solid black;
+        }
+      }
+    }
+  }
+}

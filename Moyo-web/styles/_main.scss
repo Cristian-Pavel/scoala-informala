@@ -1,0 +1,67 @@
+//////////////////////////////////
+// Phone version
+//////////////////////////////////
+
+@media (max-width: 603px) {
+  main {
+    // max-height: fit-content;
+    max-width: fit-content;
+    padding: 10px;
+    .stepContainer {
+      width: max-content;
+      height: 20px;
+      margin: 3px;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px $blue-color solid;
+      box-shadow: 0px 0px 5px #888888;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .slogan {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      position: relative;
+      bottom: -3px;
+    }
+  }
+}
+
+//////////////////////////////////
+// Tablet and laptop
+//////////////////////////////////
+@media (min-width: 603px) {
+  main {
+    // max-height: fit-content;
+    max-width: fit-content;
+    padding: 10px;
+    .mainText {
+      display: flex;
+      flex-wrap: wrap;
+      margin: auto;
+    }
+    .stepContainer {
+      width: max-content;
+      height: 20px;
+      margin: 3px;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px $blue-color solid;
+      box-shadow: 0px 0px 5px #888888;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .slogan {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      position: relative;
+      bottom: -154px;
+    }
+  }
+}
