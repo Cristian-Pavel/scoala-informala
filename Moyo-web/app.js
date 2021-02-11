@@ -16,3 +16,12 @@ let functii = {
 // Event listeners
 
 selectDOM.burgerMenuBtn.addEventListener("click", functii.toggleMobileMenu);
+
+/**
+ * //////////////// Set goals page
+ * TODO:
+  1) Functie draw de generare a unui tabel - butoane edit si delete
+  2) Formular input de Ad new goal
+ 
+
+ */

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./dist/css/style.min.css">
-    <title>Moyo App</title>
+    <title>Moyo App - Set goals</title>
 </head>
 <body>
     
@@ -14,6 +14,7 @@
            
 
             <a href="./index.html"><img src="./images/logo-moyo.png" alt="LOGO - MOYO"></a>
+
             <div class="mobilePositioner">
                 <nav class="hidden">
                     <a href="./index.html"><input type="button" class="navBtn" value="How to"></a>
@@ -27,23 +28,31 @@
             
         </header>
         <main>
-            <div class="mainText">
+            <h3>Goals list</h3>
+            <table>
                 
-                <div class="steps">
-                    <h3>How to use this app:</h3>
-
-                    <div class="stepContainer">1) Set goals <img src="./images/target.png" alt="Icon"></div>
-                    <div class="stepContainer">2) Configure reminder <img src="./images/add-reminder.png" alt="Icon"></div>
-                    <div class="stepContainer">3) Add activity / Week view<img src="./images/calendar.png" alt="Icon"></div>
-                    <div class="stepContainer">4) Statistics <img src="./images/pie-chart.png" alt="Icon"></div>
-
-                </div>
-                <!-- <img src="./images/worker-desk.png" alt="Man sits at desk"> -->
-
+            </table>
+            <form onsubmit="event.preventDefault();">
+                <textarea name="addNewGoalInput" id="addNewGoalInput" cols="30" rows="1" placeholder="Write your goal and hit the + !"></textarea>
+                <img src="./images/addNewGoalBtn.png" alt="Add a new goal" class="addNewGoalBtn" id="addNewGoalBtn">
+            </form>
+            <h3>SMART (what it means and examples)</h3>
+            <div class="exampleGridContainer">
+                <ul>
+                    <li>S - specific (what?)</li>
+                    <li>M - measurable (how much?)</li>
+                    <li>A - attainable (could I?)</li>
+                    <li>R - relevent (why?)</li>
+                    <li>T - time bound (when? deadline?)</li>
+                </ul>
+                <ul> 
+                    <li>Run at least 30' on Monday, Wednesdey and Friday.</li>
+                    <li>Eat maximum 2000 calories during week days.</li>
+                    <li>Learn German at minimum B1 level until 1st of August</li>
+                    <li>Follow minim 1 hour of Javascript tutorials every Saturday</li>
+                    <li>Hike at least 3 peaks over 2500 meters this year</li>
+                </ul>
             </div>
-
-            <h3 class="slogan">Moyo - Monitor your time, become more focused, achieve more.</h3>
-            
         </main>
     </div>
     <div class="flatIcon">Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
