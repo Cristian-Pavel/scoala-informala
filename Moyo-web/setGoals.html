@@ -13,7 +13,7 @@
             <img src="./images/burger-menu.png" alt="Mobile Menu Icon" class="burgerMenu">
            
 
-            <a href="./index.html"><img src="./images/logo-moyo.png" alt="LOGO - MOYO"></a>
+            <a href="./index.html"><img src="./images/logo-moyo2.png" alt="LOGO - MOYO"></a>
 
             <div class="mobilePositioner">
                 <nav class="hidden">
@@ -29,12 +29,29 @@
         </header>
         <main>
             <h3>Goals list</h3>
-            <table>
-                
+            <table class="goalsTable">
+                <tr>
+                    <td>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat, aut.</td>
+                    <td>Edit</td>
+                    <td>Delete</td>
+                </tr>
+                <tr>
+                    <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, numquam.</td>
+                    <td>Edit</td>
+                    <td>Delete</td>
+                </tr>
+                <tr>
+                    <td>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque, facere.</td>
+                    <td>Edit</td>
+                    <td>Delete</td>
+                </tr>
             </table>
             <form onsubmit="event.preventDefault();">
-                <textarea name="addNewGoalInput" id="addNewGoalInput" cols="30" rows="1" placeholder="Write your goal and hit the + !"></textarea>
+                <input type="text" name="addNewGoalInput" class="addNewGoalInput" id="addNewGoalInput"  placeholder="Write your goal and hit the + button">
                 <img src="./images/addNewGoalBtn.png" alt="Add a new goal" class="addNewGoalBtn" id="addNewGoalBtn">
+                <br>
+                <button id="confirmBtnEdit" class="hiddenEdit">Confirm</button>
+                <button id="cancelBtnEdit" class="hiddenEdit">Cancel</button>
             </form>
             <h3>SMART (what it means and examples)</h3>
             <div class="exampleGridContainer">

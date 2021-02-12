@@ -2,7 +2,7 @@
 // Phone version
 //////////////////////////////////
 
-@media (max-width: 603px) {
+@media (max-width: 655px) {
   // How to page
   main {
     // max-height: fit-content;
@@ -25,10 +25,58 @@
       margin: 0;
       padding: 0;
       text-align: center;
-      // position: relative;
-      // bottom: -3px;
+      position: relative;
+      bottom: -102px;
     }
     // Set goals page
+    .goalsTable {
+      margin-bottom: 10px;
+      min-width: 80%;
+      max-width: 90vw;
+    }
+    td {
+      text-align: center;
+      padding: 0 10px;
+      height: 50px;
+      border: 1px solid #999;
+    }
+
+    .editGoalBtn:active {
+      background-color: $green-color;
+    }
+    .deleteGoalBtn:active {
+      background-color: $red-color;
+    }
+
+    .addNewGoalInput {
+      min-width: 80%;
+      max-width: 90vw;
+      font-size: large;
+    }
+
+    .addNewGoalBtn {
+      position: relative;
+      top: 5px;
+      height: auto;
+      width: 26px;
+    }
+
+    .addNewGoalBtn:active {
+      transform: scale(2);
+    }
+
+    #confirmBtnEdit,
+    #cancelBtnEdit {
+      margin-top: 5px;
+      padding: 6px;
+      &:active {
+        background-color: $blue-color;
+      }
+    }
+
+    .hiddenEdit {
+      display: none;
+    }
 
     // Add activity page
     .categoriesContainer {
@@ -88,32 +136,16 @@
 //////////////////////////////////
 // Tablet and laptop
 //////////////////////////////////
-@media (min-width: 603px) {
-  // How to page
-
+@media (min-width: 655px) {
   main {
-    // max-height: fit-content;
+    // How to page
+
     max-width: fit-content;
     padding: 10px;
-    .mainText {
-      display: flex;
-      flex-wrap: wrap;
-      margin: auto;
-    }
-
-    .slogan {
-      margin: 0;
-      padding: 0;
-      text-align: center;
-      position: relative;
-      bottom: -154px;
-    }
-
-    // Set goals page
 
     .stepContainer {
       max-width: 100%;
-      height: 50px;
+      height: 35px;
       margin: 3px;
       padding: 10px;
       border-radius: 5px;
@@ -121,16 +153,82 @@
       box-shadow: 0px 0px 5px #888888;
       display: flex;
       align-items: center;
-
-      [alt="Icon"] {
-        padding-left: 10px;
-      }
     }
 
+    .mainText {
+      display: flex;
+      flex-wrap: wrap;
+      margin: auto;
+    }
+
+    .stepsIcons {
+      margin-left: 10px;
+    }
+
+    .slogan {
+      margin: 0;
+      padding: 0;
+      position: relative;
+      bottom: -28px;
+      left: auto;
+      right: auto;
+    }
+
+    // Set goals page
+
+    .goalsTable {
+      margin-bottom: 10px;
+      min-width: 80%;
+      max-width: 90vw;
+    }
+    td {
+      text-align: center;
+      padding: 0 10px;
+      height: 50px;
+      border: 1px solid #999;
+    }
+
+    .editGoalBtn:active {
+      background-color: $green-color;
+    }
+
+    .deleteGoalBtn:active {
+      background-color: $red-color;
+    }
+
+    .addNewGoalInput {
+      min-width: 80%;
+      max-width: 90vw;
+      font-size: large;
+    }
+
+    .addNewGoalBtn {
+      position: relative;
+      top: 5px;
+      height: auto;
+      width: 26px;
+    }
+
+    .addNewGoalBtn:active {
+      transform: scale(2);
+    }
     .exampleGridContainer {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 4px;
+    }
+
+    #confirmBtnEdit,
+    #cancelBtnEdit {
+      margin-top: 5px;
+      padding: 6px;
+      &:active {
+        background-color: $blue-color;
+      }
+    }
+
+    .hiddenEdit {
+      display: none;
     }
 
     // Add activity page
