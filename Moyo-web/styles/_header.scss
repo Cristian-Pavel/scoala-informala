@@ -16,7 +16,12 @@
       margin: 5px;
     }
     [alt="LOGO - MOYO"] {
-      display: none;
+      height: auto;
+      max-width: 150px;
+      margin-left: 1px;
+      position: relative;
+      top: 2px;
+      right: -141px;
     }
 
     .mobilePositioner {
