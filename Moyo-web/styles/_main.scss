@@ -79,6 +79,26 @@
     }
 
     // Add activity page
+    .addActivityForm {
+      display: flex;
+      flex-direction: column;
+      align-items: baseline;
+
+      label {
+        padding: 5px;
+      }
+
+      [value="Add activity"] {
+        background-color: $blue-color;
+        margin-top: 5px;
+        padding: 5px;
+        border: 2px solid black;
+        font-weight: bolder;
+        &:active {
+          transform: scale(1.5);
+        }
+      }
+    }
     .categoriesContainer {
       display: grid;
       grid-template-columns: repeat(1, 1fr);
@@ -232,6 +252,27 @@
     }
 
     // Add activity page
+
+    .addActivityForm {
+      display: flex;
+      flex-direction: column;
+      align-items: baseline;
+
+      label {
+        padding: 5px;
+      }
+
+      [value="Add activity"] {
+        background-color: $blue-color;
+        margin-top: 5px;
+        padding: 5px;
+        border: 2px solid black;
+        font-weight: bolder;
+        &:active {
+          transform: scale(1.5);
+        }
+      }
+    }
 
     .categoriesContainer {
       display: grid;

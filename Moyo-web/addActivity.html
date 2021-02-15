@@ -30,17 +30,17 @@
             <div class="addActivityContainer">
                 <h3>Add activities</h3>
                 
-                <form onsubmit="event.preventDefault();">
+                <form onsubmit="event.preventDefault();" class="addActivityForm">
                     <p>What have you done in the meantime?</p>
                     <label><input type="radio" name="categories" id="productive">
-                    Productive</label><br>
+                    Productive</label>
                     <label><input type="radio" name="categories" id="maintanance">
-                    Maintanance</label><br>
+                    Maintanance</label>
                     <label><input type="radio" name="categories" id="relaxation">
-                    Relaxation</label><br>
+                    Relaxation</label>
                     <label><input type="radio" name="categories" id="distractions">
-                    Distractions</label><br>
-                    <br>
+                    Distractions</label>
+                    
                     <label for="goalsList">Choose goal that you're working at:</label>
                         <select name="goalsList" id="goalsList">
                             <option value="obiectiv1">obiectiv1</option>
@@ -49,12 +49,12 @@
                             <option value="obiectiv4">obiectiv4</option>
                             <!-- Aici ar trebui o functie in JS care sa populeze cu obiectivele -->
                         </select>
-                    <br>
+                    
                     <label for="startTime">Start of the activity</label>
-                    <input type="datetime-local" id="startTime" name="startTime" min="09:00" max="18:00" required><br>
+                    <input type="datetime-local" id="startTime" name="startTime" min="09:00" max="18:00" required>
                     <label for="endTime">End of the activity</label>
                     <input type="datetime-local" id="endTime" name="endTime" min="09:00" max="18:00" required>
-                    <br>
+                    
                     <input type="button" value="Add activity">
                 
                 </form>
