@@ -29,7 +29,39 @@
         <main>
             <div class="addActivityContainer">
                 <h3>Add activities</h3>
-                <p style="color:coral; font-weight:bolder "> !!! aici urmeaza sa populam continutul prin javascript !!!</p>
+                
+                <form onsubmit="event.preventDefault();">
+                    <p>What have you done in the meantime?</p>
+                    <label><input type="radio" name="categories" id="productive">
+                    Productive</label><br>
+                    <label><input type="radio" name="categories" id="maintanance">
+                    Maintanance</label><br>
+                    <label><input type="radio" name="categories" id="relaxation">
+                    Relaxation</label><br>
+                    <label><input type="radio" name="categories" id="distractions">
+                    Distractions</label><br>
+                    <br>
+                    <label for="goalsList">Choose goal that you're working at:</label>
+                        <select name="goalsList" id="goalsList">
+                            <option value="obiectiv1">obiectiv1</option>
+                            <option value="obiectiv2">obiectiv2</option>
+                            <option value="obiectiv3">obiectiv3</option>
+                            <option value="obiectiv4">obiectiv4</option>
+                            <!-- Aici ar trebui o functie in JS care sa populeze cu obiectivele -->
+                        </select>
+                    <br>
+                    <label for="startTime">Start of the activity</label>
+                    <input type="datetime-local" id="startTime" name="startTime" min="09:00" max="18:00" required><br>
+                    <label for="endTime">End of the activity</label>
+                    <input type="datetime-local" id="endTime" name="endTime" min="09:00" max="18:00" required>
+                    <br>
+                    <input type="button" value="Add activity">
+                
+                </form>
+               
+
+
+
                 <h3>Categories description</h3>
                 <div class="categoriesContainer">
                     <div class="prodBox">

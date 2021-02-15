@@ -3,6 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./node_modules/fullcalendar/main.css" rel="stylesheet" />
+    <script>
+
+    //   document.addEventListener('DOMContentLoaded', function() {
+    //     var calendarEl = document.getElementById('calendar');
+    //     var calendar = new FullCalendar.Calendar(calendarEl, {
+    //       initialView: 'dayGridMonth',
+    //       headerToolbar: {
+    //           left: 'prev, next, today',
+    //           center: 'title',
+    //           right: 'dayGridMonth,timeGridWeek,timeGridDay'
+    //       }
+    //     });
+    //     calendar.render();
+    //   });
+
+    </script>
     <link rel="stylesheet" href="./dist/css/style.min.css">
     <title>Moyo App</title>
 </head>
@@ -28,12 +45,13 @@
         </header>
         <main>
             <h3>Week view</h3>
-            <button class="weekViewBtn">Today</button>
-            <button class="weekViewBtn">Full week</button>
+            <!-- <button class="weekViewBtn">Today</button>
+            <button class="weekViewBtn">Full week</button>      -->
+            <div class="weekViewContainer">
 
-                <p style="color:coral; font-weight:bolder "> !!! aici urmeaza sa populam continutul prin javascript !!!</p>
-                
-            <div class="weekViewContainer"></div>
+                <div id="calendar"></div>
+
+            </div>
                 
                 
             
@@ -41,6 +59,8 @@
     </div>
     <div class="flatIcon">Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
     </div>
+    <script src="./node_modules/fullcalendar/main.js"></script>
+
     <script src="./app.js"></script>
 </body>
 </html>
