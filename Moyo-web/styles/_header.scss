@@ -10,7 +10,7 @@
 @media (max-width: 655px) {
   header {
     display: flex;
-
+    justify-content: space-between;
     .burgerMenu {
       width: 50px;
       margin: 5px;
@@ -21,7 +21,6 @@
       margin-left: 1px;
       position: relative;
       top: 1px;
-      right: -179px;
     }
 
     .mobilePositioner {
@@ -37,7 +36,7 @@
     nav {
       display: flex;
       flex-direction: column;
-
+      z-index: 100;
       .navBtn {
         padding: 14px 84px;
         margin: 2px;

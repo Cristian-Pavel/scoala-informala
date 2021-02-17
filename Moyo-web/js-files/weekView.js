@@ -62,7 +62,7 @@ function getActivityColor(activityCateg) {
 function drawCalendar(activityArr) {
   let calendarEl = document.getElementById("calendar");
   let calendar = new FullCalendar.Calendar(calendarEl, {
-    initialView: "dayGridWeek",
+    initialView: "timeGridDay",
     nowIndicator: true,
     height: "80vh",
     headerToolbar: {
