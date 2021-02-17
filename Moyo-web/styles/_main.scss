@@ -84,6 +84,13 @@
       flex-direction: column;
       align-items: baseline;
 
+      #goalsList {
+        min-width: 60%;
+      }
+
+      .activityDescription {
+        min-width: 60%;
+      }
       label {
         padding: 5px;
       }
@@ -107,28 +114,28 @@
       .prodBox {
         background-color: $green-color;
         border-radius: 5px;
-        color: whitesmoke;
+        color: black;
         text-align: center;
         padding: 3px;
       }
       .maintainanceBox {
         background-color: $yellow-color;
         border-radius: 5px;
-        color: whitesmoke;
+        color: black;
         text-align: center;
         padding: 3px;
       }
       .relaxationBox {
         background-color: $blue-color;
         border-radius: 5px;
-        color: whitesmoke;
+        color: black;
         text-align: center;
         padding: 3px;
       }
       .distractionBox {
         background-color: $red-color;
         border-radius: 5px;
-        color: whitesmoke;
+        color: black;
         text-align: center;
         padding: 3px;
       }
@@ -258,6 +265,14 @@
       flex-direction: column;
       align-items: baseline;
 
+      .activityDescription {
+        min-width: 60%;
+      }
+
+      #goalsList {
+        min-width: 60%;
+      }
+
       label {
         padding: 5px;
       }
@@ -282,28 +297,28 @@
       .prodBox {
         background-color: $green-color;
         border-radius: 5px;
-        color: whitesmoke;
+        color: black;
         text-align: center;
         padding: 3px;
       }
       .maintainanceBox {
         background-color: $yellow-color;
         border-radius: 5px;
-        color: whitesmoke;
+        color: black;
         text-align: center;
         padding: 3px;
       }
       .relaxationBox {
         background-color: $blue-color;
         border-radius: 5px;
-        color: whitesmoke;
+        color: black;
         text-align: center;
         padding: 3px;
       }
       .distractionBox {
         background-color: $red-color;
         border-radius: 5px;
-        color: whitesmoke;
+        color: black;
         text-align: center;
         padding: 3px;
       }

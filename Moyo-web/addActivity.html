@@ -32,30 +32,33 @@
                 
                 <form onsubmit="event.preventDefault();" class="addActivityForm">
                     <p>What have you done in the meantime?</p>
-                    <label><input type="radio" name="categories" id="productive">
+                    <input type="text" name="description" id="activityDescription" placeholder="Write the activity description here" class="activityDescription">
+                    <label><input type="radio" name="categories" id="productive" value="Productive">
                     Productive</label>
-                    <label><input type="radio" name="categories" id="maintanance">
+                    <label><input type="radio" name="categories" id="maintanance" value="Maintanance">
                     Maintanance</label>
-                    <label><input type="radio" name="categories" id="relaxation">
+                    <label><input type="radio" name="categories" id="relaxation" value="Relaxation">
                     Relaxation</label>
-                    <label><input type="radio" name="categories" id="distractions">
+                    <label><input type="radio" name="categories" id="distractions" value="Distractions">
                     Distractions</label>
                     
                     <label for="goalsList">Choose goal that you're working at:</label>
-                        <select name="goalsList" id="goalsList">
-                            <option value="obiectiv1">obiectiv1</option>
-                            <option value="obiectiv2">obiectiv2</option>
-                            <option value="obiectiv3">obiectiv3</option>
-                            <option value="obiectiv4">obiectiv4</option>
-                            <!-- Aici ar trebui o functie in JS care sa populeze cu obiectivele -->
-                        </select>
+                    <select name="goalsList" id="goalsList">
+                        <option disabled hidden selected>None</option>
+                        <option value="obiectiv1">obiectiv1</option>
+                        <option value="obiectiv2">obiectiv2</option>
+                        <option value="obiectiv3">obiectiv3</option>
+                        <option value="obiectiv4">obiectiv4</option>
+                        <!-- Aici ar trebui o functie in JS care sa populeze cu obiectivele -->
+                    </select>
+                  
                     
                     <label for="startTime">Start of the activity</label>
                     <input type="datetime-local" id="startTime" name="startTime" min="09:00" max="18:00" required>
                     <label for="endTime">End of the activity</label>
                     <input type="datetime-local" id="endTime" name="endTime" min="09:00" max="18:00" required>
                     
-                    <input type="button" value="Add activity">
+                    <input type="button" value="Add activity" id="addActivityBtn">
                 
                 </form>
                
@@ -89,6 +92,6 @@
     </div>
     <div class="flatIcon">Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
     </div>
-    <script src="./app.js"></script>
+    <script src="../Moyo-web/js-files/addActivity.js"></script>
 </body>
 </html>
