@@ -41,6 +41,7 @@ async function getDataFromDataBase() {
       start: activityProp.startTime,
       end: activityProp.endTime,
       backgroundColor: getActivityColor(activityCateg),
+      textColor: "black",
     });
   }
   console.log(activityArr);
