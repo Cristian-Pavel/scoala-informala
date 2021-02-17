@@ -64,7 +64,7 @@ function drawCalendar(activityArr) {
   let calendar = new FullCalendar.Calendar(calendarEl, {
     initialView: "dayGridWeek",
     nowIndicator: true,
-    // initialDate: "2021-02-07",
+    height: "80vh",
     headerToolbar: {
       left: "prev,next,today",
       center: "title",
