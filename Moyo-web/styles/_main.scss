@@ -84,12 +84,26 @@
       flex-direction: column;
       align-items: baseline;
 
-      #goalsList {
-        min-width: 60%;
+      .activityDescription {
+        min-width: 90%;
+        height: 34px;
+        font-size: 23px;
       }
 
-      .activityDescription {
-        min-width: 60%;
+      #goalsList {
+        min-width: 90%;
+        height: 34px;
+        font-size: 23px;
+      }
+
+      #startTime {
+        height: 34px;
+        font-size: 20px;
+      }
+
+      #endTime {
+        height: 34px;
+        font-size: 20px;
       }
       label {
         padding: 5px;
@@ -272,10 +286,24 @@
 
       .activityDescription {
         min-width: 60%;
+        height: 34px;
+        font-size: 23px;
       }
 
       #goalsList {
         min-width: 60%;
+        height: 34px;
+        font-size: 23px;
+      }
+
+      #startTime {
+        height: 34px;
+        font-size: 20px;
+      }
+
+      #endTime {
+        height: 34px;
+        font-size: 20px;
       }
 
       label {
