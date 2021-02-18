@@ -20,8 +20,12 @@ let selectDOM = {
 let urlActivities =
   "https://moyo-app-7cf34-default-rtdb.europe-west1.firebasedatabase.app/activities/";
 
+let urlGoals =
+  "https://moyo-app-7cf34-default-rtdb.europe-west1.firebasedatabase.app/goals/";
+
 let databaseInfo = {};
 let activity = {};
+let databaseGoals = {};
 
 ///////////////////////
 // Functii
@@ -74,11 +78,33 @@ function readAddActivitiesForm() {
   return activity;
 }
 
+async function getGoalsFromDatabase() {
+  const response = await fetch(urlGoals + ".json");
+  databaseGoals = await response.json();
+  if (databaseGoals === null) {
+    databaseGoals = {};
+  }
+  console.log(databaseGoals);
+  drawGoalsOnPage(databaseGoals);
+}
+
+function drawGoalsOnPage(databaseGoals) {
+  let str = "<option disabled hidden selected>None</option>";
+  for (let [id, goal] of Object.entries(databaseGoals)) {
+    str += `
+    <option value="${goal.goal}">${goal.goal}</option>
+
+    `;
+  }
+  document.querySelector("#goalsList").innerHTML = str;
+}
+
 ///////////////////////
 // Event listeners
 ///////////////////////
 
 // Every page
+window.addEventListener("load", getGoalsFromDatabase);
 selectDOM.burgerMenuBtn.addEventListener("click", toggleMobileMenu);
 
 selectDOM.addActivityBtn.addEventListener("click", addActivity);

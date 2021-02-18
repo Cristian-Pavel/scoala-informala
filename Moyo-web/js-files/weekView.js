@@ -29,7 +29,6 @@ async function getDataFromDataBase() {
     return;
   }
   console.log(databaseInfo);
-  let activityColor = "";
   for (let [id, activityProp] of Object.entries(databaseInfo)) {
     if (activityProp === null) {
       continue;
@@ -40,6 +39,7 @@ async function getDataFromDataBase() {
       title: activityProp.description,
       start: activityProp.startTime,
       end: activityProp.endTime,
+      description: activityProp.selectedGoal,
       backgroundColor: getActivityColor(activityCateg),
       textColor: "black",
     });
@@ -64,6 +64,9 @@ function drawCalendar(activityArr) {
   let calendarEl = document.getElementById("calendar");
   let calendar = new FullCalendar.Calendar(calendarEl, {
     initialView: "timeGridDay",
+    selectable: true,
+    placeholder: true,
+    // editable: true,
     nowIndicator: true,
     height: "80vh",
     headerToolbar: {
