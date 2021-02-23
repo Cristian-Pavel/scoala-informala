@@ -22,7 +22,6 @@ let urlActivities =
 
 let databaseInfo = {};
 let activityArr = [];
-let dataPointsLocal = [];
 
 ///////////////////////
 // Functii
@@ -132,6 +131,7 @@ function constructDataPoints(
   relaxProcent,
   distractionsTime
 ) {
+  let dataPointsLocal = [];
   dataPointsLocal[0] = { y: prodProcent, label: 'Productive', color: 'green' };
   dataPointsLocal[1] = {
     y: mainteProcent,
