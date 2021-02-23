@@ -15,7 +15,7 @@
       width: 50px;
       margin: 5px;
     }
-    [alt="LOGO - MOYO"] {
+    [alt='LOGO - MOYO'] {
       height: auto;
       max-width: 150px;
       margin-left: 1px;
@@ -25,9 +25,10 @@
 
     .mobilePositioner {
       position: absolute;
-      top: 87px;
+      top: 97px;
       left: 19px;
-      // z-index: 3;
+      z-index: 100;
+      background: white;
     }
     nav.hidden {
       display: none;
@@ -38,6 +39,7 @@
       flex-direction: column;
       z-index: 100;
       .navBtn {
+        width: 100%;
         padding: 14px 84px;
         background-color: #f8f8f8;
         margin: 2px;
@@ -63,7 +65,7 @@
     .burgerMenu {
       display: none;
     }
-    [alt="LOGO - MOYO"] {
+    [alt='LOGO - MOYO'] {
       height: auto;
       max-width: 150px;
       margin-left: 1px;
