@@ -3,13 +3,13 @@
 ///////////////////////
 
 let selectDOM = {
-  nav: document.querySelector("nav"),
-  burgerMenuBtn: document.querySelector(".burgerMenu"),
-  addActivityForm: document.querySelector(".addActivityForm"),
-  addActivityBtn: document.getElementById("addActivityBtn"),
-  startTime: document.getElementById("startTime"),
-  endTime: document.getElementById("endTime"),
-  activityDescription: document.getElementById("activityDescription"),
+  nav: document.querySelector('nav'),
+  burgerMenuBtn: document.querySelector('.burgerMenu'),
+  addActivityForm: document.querySelector('.addActivityForm'),
+  addActivityBtn: document.getElementById('addActivityBtn'),
+  startTime: document.getElementById('startTime'),
+  endTime: document.getElementById('endTime'),
+  activityDescription: document.getElementById('activityDescription'),
   // activityCategory: document.querySelector('input[name="categories"]:checked'),
 };
 
@@ -18,10 +18,10 @@ let selectDOM = {
 //////////////////////////////
 
 let urlActivities =
-  "https://moyo-app-7cf34-default-rtdb.europe-west1.firebasedatabase.app/activities/";
+  'https://moyo-app-7cf34-default-rtdb.europe-west1.firebasedatabase.app/activities/';
 
 let urlGoals =
-  "https://moyo-app-7cf34-default-rtdb.europe-west1.firebasedatabase.app/goals/";
+  'https://moyo-app-7cf34-default-rtdb.europe-west1.firebasedatabase.app/goals/';
 
 let databaseInfo = {};
 let activity = {};
@@ -34,11 +34,11 @@ let databaseGoals = {};
 // Every page
 
 function toggleMobileMenu() {
-  selectDOM.nav.classList.toggle("hidden");
+  selectDOM.nav.classList.toggle('hidden');
 }
 
 async function getDataFromDataBase() {
-  const response = await fetch(urlActivities + ".json");
+  const response = await fetch(urlActivities + '.json');
   databaseInfo = await response.json();
   if (databaseInfo === null) {
     databaseInfo = {};
@@ -48,15 +48,16 @@ async function getDataFromDataBase() {
 async function addActivity() {
   readAddActivitiesForm();
   if (activity) {
-    const response = await fetch(urlActivities + ".json", {
-      method: "post",
+    const response = await fetch(urlActivities + '.json', {
+      method: 'post',
       body: JSON.stringify(activity),
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
     });
     await response.json();
     await getDataFromDataBase();
+    alert('The activity was added succesfully!');
   }
 }
 
@@ -64,7 +65,7 @@ function readAddActivitiesForm() {
   let activityDescription = selectDOM.activityDescription.value;
   let category = document.querySelector('input[name="categories"]:checked')
     .value;
-  let selectedGoal = document.querySelector("#goalsList");
+  let selectedGoal = document.querySelector('#goalsList');
   selectedGoal = selectedGoal.options[selectedGoal.selectedIndex].text;
   let startTime = selectDOM.startTime.value;
   let endTime = selectDOM.endTime.value;
@@ -79,7 +80,7 @@ function readAddActivitiesForm() {
 }
 
 async function getGoalsFromDatabase() {
-  const response = await fetch(urlGoals + ".json");
+  const response = await fetch(urlGoals + '.json');
   databaseGoals = await response.json();
   if (databaseGoals === null) {
     databaseGoals = {};
@@ -89,14 +90,14 @@ async function getGoalsFromDatabase() {
 }
 
 function drawGoalsOnPage(databaseGoals) {
-  let str = "<option disabled hidden selected>None</option>";
+  let str = '<option disabled hidden selected>None</option>';
   for (let [id, goal] of Object.entries(databaseGoals)) {
     str += `
     <option value="${goal.goal}">${goal.goal}</option>
 
     `;
   }
-  document.querySelector("#goalsList").innerHTML = str;
+  document.querySelector('#goalsList').innerHTML = str;
 }
 
 ///////////////////////
@@ -104,10 +105,10 @@ function drawGoalsOnPage(databaseGoals) {
 ///////////////////////
 
 // Every page
-window.addEventListener("load", getGoalsFromDatabase);
-selectDOM.burgerMenuBtn.addEventListener("click", toggleMobileMenu);
+window.addEventListener('load', getGoalsFromDatabase);
+selectDOM.burgerMenuBtn.addEventListener('click', toggleMobileMenu);
 
-selectDOM.addActivityBtn.addEventListener("click", addActivity);
+selectDOM.addActivityBtn.addEventListener('click', addActivity);
 
 /***
  Pasi:
