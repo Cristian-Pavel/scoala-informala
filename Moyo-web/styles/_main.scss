@@ -109,7 +109,7 @@
         padding: 5px;
       }
 
-      [value="Add activity"] {
+      [value='Add activity'] {
         background-color: $blue-color;
         margin-top: 5px;
         padding: 5px;
@@ -159,6 +159,13 @@
 
     #calendar {
       z-index: -1;
+    }
+
+    .fc .fc-toolbar.fc-header-toolbar {
+      margin-bottom: 1.5em;
+      /* max-width: 102%; */
+      display: flex;
+      flex-wrap: wrap;
     }
 
     .weekViewBtn {
@@ -310,7 +317,7 @@
         padding: 5px;
       }
 
-      [value="Add activity"] {
+      [value='Add activity'] {
         background-color: $blue-color;
         margin-top: 5px;
         padding: 5px;

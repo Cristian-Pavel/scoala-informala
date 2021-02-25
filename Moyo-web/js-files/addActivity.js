@@ -100,6 +100,13 @@ function drawGoalsOnPage(databaseGoals) {
   document.querySelector('#goalsList').innerHTML = str;
 }
 
+// TODO: resolve the functionality
+async function startDateFromWeekview(date) {
+  selectDOM.startTime.value = date;
+  selectDOM.endTime.value = date;
+  await addActivity();
+}
+
 ///////////////////////
 // Event listeners
 ///////////////////////

@@ -84,10 +84,12 @@ function drawCalendar(activityArr) {
       right: 'dayGridMonth,timeGridWeek,timeGridDay',
     },
     events: activityArr,
-    dateClick: bringMeToAddPage,
+    dateClick: (e) => {
+      console.log(e.dateStr);
+      bringMeToAddPage(e);
+    },
     eventClick: (e) => {
       let databaseId = e.event._def.publicId; // identificat prin console.log(e), sa vedem ce returneaza
-      console.log(databaseId);
       deleteActivity(databaseId);
     },
   });
@@ -95,8 +97,10 @@ function drawCalendar(activityArr) {
   calendar.render();
 }
 
-function bringMeToAddPage() {
+// TODO: resolve the functionality and activate startDateFromWeekView
+function bringMeToAddPage(e) {
   if (confirm(`Are you sure you want to add a new activity?`)) {
+    // startDateFromWeekview(e.dateStr);
     window.location.href = './addActivity.html';
   }
 }
@@ -126,19 +130,6 @@ function toggleMobileMenu() {
 selectDOM.burgerMenuBtn.addEventListener('click', toggleMobileMenu);
 window.addEventListener('load', getDataFromDataBase);
 
-// let calendarSpace1 = document.querySelector(
-//   '.fc-timegrid-slot fc-timegrid-slot-lane'
-// );
-// let calendarSpace2 = document.querySelector(
-//   '.fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor'
-// );
-// calendarSpace1.addEventListener('click', function () {
-//   window.location.href = './addActivity.html';
-// });
-// calendarSpace2.addEventListener('click', function () {
-//   window.location.href = './addActivity.html';
-// });
-
 /**
  TODO: 
 
@@ -148,8 +139,7 @@ window.addEventListener('load', getDataFromDataBase);
   1.3 In functie de categoria de activitate (groupId) dam si culoarea - verde, rosu, albastru, galben ✅
   1.3 Add event de double click
 
- 2) In a doua etapa, voi integra popularea paginii weekview atat cu informatii despre activitati cat si despre obective
-
+ 2) In a doua etapa, voi integra popularea paginii weekview atat cu informatii despre activitati cat si despre obective ✅
 
 
  */
