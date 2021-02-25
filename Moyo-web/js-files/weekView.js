@@ -3,8 +3,8 @@
 ///////////////////////
 
 let selectDOM = {
-  nav: document.querySelector("nav"),
-  burgerMenuBtn: document.querySelector(".burgerMenu"),
+  nav: document.querySelector('nav'),
+  burgerMenuBtn: document.querySelector('.burgerMenu'),
 };
 
 ////////////////////////////
@@ -12,7 +12,7 @@ let selectDOM = {
 //////////////////////////////
 
 let urlActivities =
-  "https://moyo-app-7cf34-default-rtdb.europe-west1.firebasedatabase.app/activities/";
+  'https://moyo-app-7cf34-default-rtdb.europe-west1.firebasedatabase.app/activities/';
 
 let databaseInfo = {};
 let activityArr = [];
@@ -22,7 +22,7 @@ let activityArr = [];
 ///////////////////////
 
 async function getDataFromDataBase() {
-  const response = await fetch(urlActivities + ".json");
+  const response = await fetch(urlActivities + '.json');
   databaseInfo = await response.json();
   if (databaseInfo === null) {
     databaseInfo = {};
@@ -34,14 +34,23 @@ async function getDataFromDataBase() {
       continue;
     }
     activityCateg = activityProp.category;
+    let descriptionWithGoal;
+    // vreau sa afiseze obiectivul la care se lucreaza, doar cand exista
+    if (activityProp.selectedGoal !== 'None') {
+      descriptionWithGoal = `${activityProp.description}, was done for goal >>         
+      ${activityProp.selectedGoal}`;
+    } else {
+      descriptionWithGoal = activityProp.description;
+    }
     activityArr.push({
       groupId: activityProp.category,
-      title: activityProp.description,
+      title: descriptionWithGoal,
       start: activityProp.startTime,
       end: activityProp.endTime,
       description: activityProp.selectedGoal,
       backgroundColor: getActivityColor(activityCateg),
-      textColor: "black",
+      textColor: 'black',
+      id: id,
     });
   }
   console.log(activityArr);
@@ -49,41 +58,64 @@ async function getDataFromDataBase() {
 }
 
 function getActivityColor(activityCateg) {
-  if (activityCateg === "Productive") {
-    return "green";
-  } else if (activityCateg === "Maintanance") {
-    return "yellow";
-  } else if (activityCateg === "Relaxation") {
-    return "blue";
-  } else if (activityCateg === "Distractions") {
-    return "red";
+  if (activityCateg === 'Productive') {
+    return 'green';
+  } else if (activityCateg === 'Maintanance') {
+    return 'yellow';
+  } else if (activityCateg === 'Relaxation') {
+    return 'blue';
+  } else if (activityCateg === 'Distractions') {
+    return 'red';
   }
 }
 
 function drawCalendar(activityArr) {
-  let calendarEl = document.getElementById("calendar");
+  let calendarEl = document.getElementById('calendar');
   let calendar = new FullCalendar.Calendar(calendarEl, {
-    initialView: "timeGridDay",
+    initialView: 'timeGridDay',
     selectable: true,
     placeholder: true,
-    // editable: true,
+    editable: true,
     nowIndicator: true,
-    height: "80vh",
+    height: '80vh',
     headerToolbar: {
-      left: "prev,next,today",
-      center: "title",
-      right: "dayGridMonth,timeGridWeek,timeGridDay",
+      left: 'prev,next,today',
+      center: 'title',
+      right: 'dayGridMonth,timeGridWeek,timeGridDay',
     },
     events: activityArr,
+    dateClick: bringMeToAddPage,
+    eventClick: (e) => {
+      let databaseId = e.event._def.publicId; // identificat prin console.log(e), sa vedem ce returneaza
+      console.log(databaseId);
+      deleteActivity(databaseId);
+    },
   });
 
   calendar.render();
 }
 
+function bringMeToAddPage() {
+  if (confirm(`Are you sure you want to add a new activity?`)) {
+    window.location.href = './addActivity.html';
+  }
+}
+
+async function deleteActivity(idx) {
+  if (confirm('Are you sure you want to detele the selected activity?')) {
+    const response = await fetch(urlActivities + idx + '.json', {
+      method: 'delete',
+    });
+    await response.json();
+    await getDataFromDataBase();
+    location.reload();
+  }
+}
+
 // Every page
 
 function toggleMobileMenu() {
-  selectDOM.nav.classList.toggle("hidden");
+  selectDOM.nav.classList.toggle('hidden');
 }
 
 ///////////////////////
@@ -91,20 +123,20 @@ function toggleMobileMenu() {
 ///////////////////////
 
 // Every page
-selectDOM.burgerMenuBtn.addEventListener("click", toggleMobileMenu);
-window.addEventListener("load", getDataFromDataBase);
+selectDOM.burgerMenuBtn.addEventListener('click', toggleMobileMenu);
+window.addEventListener('load', getDataFromDataBase);
 
 // let calendarSpace1 = document.querySelector(
-//   ".fc-timegrid-slot fc-timegrid-slot-lane"
+//   '.fc-timegrid-slot fc-timegrid-slot-lane'
 // );
 // let calendarSpace2 = document.querySelector(
-//   ".fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor"
+//   '.fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor'
 // );
-// calendarSpace1.addEventListener("dblclick", function () {
-//   window.location.href = "./addActivity.html";
+// calendarSpace1.addEventListener('click', function () {
+//   window.location.href = './addActivity.html';
 // });
-// calendarSpace2.addEventListener("dblclick", function () {
-//   window.location.href = "./addActivity.html";
+// calendarSpace2.addEventListener('click', function () {
+//   window.location.href = './addActivity.html';
 // });
 
 /**
