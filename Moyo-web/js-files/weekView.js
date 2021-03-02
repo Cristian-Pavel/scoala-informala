@@ -99,6 +99,7 @@ function drawCalendar(activityArr) {
 
 // TODO: resolve the functionality and activate startDateFromWeekView
 function bringMeToAddPage(e) {
+  console.log(e);
   if (confirm(`Are you sure you want to add a new activity?`)) {
     // startDateFromWeekview(e.dateStr);
     window.location.href = './addActivity.html';

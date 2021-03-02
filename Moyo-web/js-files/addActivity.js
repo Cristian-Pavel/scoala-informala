@@ -7,6 +7,7 @@ let selectDOM = {
   burgerMenuBtn: document.querySelector('.burgerMenu'),
   addActivityForm: document.querySelector('.addActivityForm'),
   addActivityBtn: document.getElementById('addActivityBtn'),
+  addActivityBtn2: document.getElementById('addActivityBtn2'),
   startTime: document.getElementById('startTime'),
   endTime: document.getElementById('endTime'),
   activityDescription: document.getElementById('activityDescription'),
@@ -46,18 +47,42 @@ async function getDataFromDataBase() {
 }
 
 async function addActivity() {
-  readAddActivitiesForm();
-  if (activity) {
-    const response = await fetch(urlActivities + '.json', {
-      method: 'post',
-      body: JSON.stringify(activity),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-    await response.json();
-    await getDataFromDataBase();
-    alert('The activity was added succesfully!');
+  if (addFormValidator()) {
+    readAddActivitiesForm();
+    if (activity) {
+      const response = await fetch(urlActivities + '.json', {
+        method: 'post',
+        body: JSON.stringify(activity),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+      await response.json();
+      await getDataFromDataBase();
+      alert('The activity was added succesfully!');
+    } else {
+      alert('Please check if all the fileds are fullfilled');
+    }
+  }
+}
+
+async function addActivityAndMovetoWeekView() {
+  if (addFormValidator()) {
+    readAddActivitiesForm();
+    if (activity) {
+      const response = await fetch(urlActivities + '.json', {
+        method: 'post',
+        body: JSON.stringify(activity),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+      await response.json();
+      await getDataFromDataBase();
+      window.location.href = './weekView.html';
+    } else {
+      alert('Please check if all the fileds are fullfilled');
+    }
   }
 }
 
@@ -100,6 +125,25 @@ function drawGoalsOnPage(databaseGoals) {
   document.querySelector('#goalsList').innerHTML = str;
 }
 
+function addFormValidator() {
+  if (!selectDOM.activityDescription.value) {
+    alert('Please write an activity description');
+    return false;
+  }
+  if (!document.querySelector('input[name="categories"]:checked')) {
+    alert('Please choose an activity category');
+    return false;
+  }
+  if (!selectDOM.startTime.value) {
+    alert('Please set the start time of the activity');
+    return false;
+  }
+  if (!selectDOM.endTime.value) {
+    alert('Please set the finish time of the activity');
+    return false;
+  } else return true;
+}
+
 // TODO: resolve the functionality
 async function startDateFromWeekview(date) {
   selectDOM.startTime.value = date;
@@ -116,6 +160,11 @@ window.addEventListener('load', getGoalsFromDatabase);
 selectDOM.burgerMenuBtn.addEventListener('click', toggleMobileMenu);
 
 selectDOM.addActivityBtn.addEventListener('click', addActivity);
+
+selectDOM.addActivityBtn2.addEventListener(
+  'click',
+  addActivityAndMovetoWeekView
+);
 
 /***
  Pasi:

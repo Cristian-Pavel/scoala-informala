@@ -119,6 +119,17 @@
           transform: scale(1.5);
         }
       }
+
+      #addActivityBtn2 {
+        background-color: $green-color;
+        margin-top: 5px;
+        padding: 5px;
+        border: 2px solid black;
+        font-weight: bolder;
+        &:active {
+          transform: scale(1.5);
+        }
+      }
     }
     .categoriesContainer {
       display: grid;
@@ -319,6 +330,17 @@
 
       [value='Add activity'] {
         background-color: $blue-color;
+        margin-top: 5px;
+        padding: 5px;
+        border: 2px solid black;
+        font-weight: bolder;
+        &:active {
+          transform: scale(1.5);
+        }
+      }
+
+      #addActivityBtn2 {
+        background-color: $green-color;
         margin-top: 5px;
         padding: 5px;
         border: 2px solid black;
